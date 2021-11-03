@@ -23,25 +23,25 @@ export default function MainMenu() {
   const classes = useStyles();
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" sx={{backgroundColor: '#CBCE1C'}}>
-        <Container>
-          <Stack
-            sx={{minHeight: '64px'}}
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            spacing={2}
-          >
-            <Typography variant="h6" color="inherit">
-
-            </Typography>
-            <Typography variant="h6" color="inherit">
-
-            </Typography>
-          </Stack>
-        </Container>
-      </AppBar>
+    <div className="utrecht-navhtml">
+      <nav className="topnav">
+        <ul className="utrecht-topnav__list">
+          <li className="utrecht-topnav__item">
+            <a className="utrecht-topnav__link utrecht-topnav__link--current" href="https://example.com/">Wonen en
+              leven</a>
+          </li>
+          <li className="utrecht-topnav__item">
+            <a className="utrecht-topnav__link"
+               href="https://example.com/">Werk en inkomen</a>
+          </li>,
+          <li className="utrecht-topnav__item">
+            <a className="utrecht-topnav__link" href="https://example.com/">Ondernemen</a>
+          </li>,
+          <li className="utrecht-topnav__item">
+            <a className="utrecht-topnav__link" href="https://example.com/">Bestuur en organisatie</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

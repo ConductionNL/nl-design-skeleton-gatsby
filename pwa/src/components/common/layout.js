@@ -5,6 +5,7 @@ import Header from "./header";
 import {ThemeProvider} from "@mui/styles";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import MainMenu from "./menu";
 
 const theme = createTheme({
     palette: {
@@ -21,15 +22,14 @@ export default function Layout({ children }) {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <Header/>
-
-                <Container>
-                    <Box paddingTop={2} paddingBottom={2}>
-                        {children}
-                    </Box>
-                </Container>
-
-                <Footer />
+              <Header/>
+              <MainMenu />
+              <Container>
+                  <Box paddingTop={2} paddingBottom={2}>
+                      {children}
+                  </Box>
+              </Container>
+              <Footer />
             </ThemeProvider>
         </>
     )

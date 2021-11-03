@@ -3,6 +3,7 @@ import {Button} from "@mui/material";
 import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import {useEffect} from "react";
+import {ThemeSwitcher} from "../components/theme-switcher/theme-switcher";
 
 // styles
 const pageStyles = {
@@ -34,6 +35,7 @@ const IndexPage = () => {
           🎉🎉🎉
         </span>
         </h1>
+        <ThemeSwitcher/>
       </main>
     </Layout>
   )
