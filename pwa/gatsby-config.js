@@ -13,12 +13,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-csp`,
       options: {
-        disableOnDev: true,
+        disableOnDev: false,
         mergeScriptHashes: true,
         mergeStyleHashes: true,
         directives: {
-          "script-src": "'self' 'unsafe-eval'",
-          "style-src": "'self' 'nonce-true'",
+          "script-src": "'self' 'unsafe-eval' https://unpkg.com/",
+          "style-src": "'self' 'nonce-true' https://unpkg.com/",
           "img-src": "'self' https://demodam.nl/"
         }
       }
