@@ -1,6 +1,8 @@
 import * as React from "react"
 import {Button} from "@mui/material";
 import Layout from "../components/common/layout";
+import {useUrlContext} from "../context/urlContext";
+import {useEffect} from "react";
 
 // styles
 const pageStyles = {
@@ -18,6 +20,8 @@ const headingAccentStyles = {
 
 // markup
 const IndexPage = () => {
+    const context = useUrlContext();
+
   return (
     <Layout>
       <main style={pageStyles}>
