@@ -18,14 +18,14 @@ For this part of the tutorial you will need and git client, node.js, and yarn on
 
 In order to start developing locally you need to clone your new repository to your local machine. Then open your favorite CLI and simply navigate to the folder containing your repository and start up gatsby or next.js in development mode with the following commands.
 
-######Nextjs
+**Nextjs**
 
 ```cli
 $ yarn install
 $ yarn dev
 ```
 
-######Gatsby
+**Gatsby**
 
 ```cli
 $ npm install
