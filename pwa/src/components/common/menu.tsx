@@ -27,19 +27,12 @@ export default function MainMenu() {
       <nav className="topnav">
         <ul className="utrecht-topnav__list">
           <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link utrecht-topnav__link--current" href="https://example.com/">Wonen en
-              leven</a>
+            <a className="utrecht-topnav__link utrecht-topnav__link--current" href="/">Home</a>
           </li>
           <li className="utrecht-topnav__item">
             <a className="utrecht-topnav__link"
-               href="https://example.com/">Werk en inkomen</a>
+               href="https://demodam.org/" target="_blank">Demodam.org</a>
           </li>,
-          <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link" href="https://example.com/">Ondernemen</a>
-          </li>,
-          <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link" href="https://example.com/">Bestuur en organisatie</a>
-          </li>
         </ul>
       </nav>
     </div>
