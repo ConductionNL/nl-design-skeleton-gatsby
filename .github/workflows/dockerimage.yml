@@ -61,8 +61,6 @@ jobs:
         run: docker ps
       - name: Dumping the logs
         run: docker-compose logs
-      - name: Database Update
-        run: docker-compose exec -T php bin/console doctrine:schema:update --force
       #- name: Run Postman Tests
       #  if: contains( github.ref, 'master' ) == false && contains( github.base_ref, 'master' ) == false
       #  run: newman run api/public/schema/*.postman_collection.json
