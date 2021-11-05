@@ -7,7 +7,7 @@ An ready out of the box basic  application that doesn't require configuration or
 
 The application is available in two versions, a next.js version and an gatsby version. If you want to put your prototype online without setting up a server we recommend the gatsby version, since that can be deployed through gatsby pages.
 
-##Getting started
+## Getting started
 
 In order to set up your own project you will need an github account and be logged in, the simply click on “use this template” button. Tell github where you want to spin up your prototype and click “create repository from template”.
 
@@ -22,7 +22,8 @@ In order to start developing locally you need to clone your new repository to yo
 $ yarn dev
 ```
 
-Afther yarn is ready with setting up your dev environment you should be able to navigate to http://localhost:3000/ and see the same application as on https://conductionnl.github.io/nl-design-skelleton-gatsby/.  Feel free to open up your project code and make some changes you should see the changes in your development environment isntantainusly.
+Afther yarn is ready with setting up your dev environment you should be able to navigate to [http://localhost:3000/](http://localhost:3000/) and see the same application as on
+[https://conductionnl.github.io/nl-design-skeleton-gatsby/](https://conductionnl.github.io/nl-design-skeleton-gatsby/).  Feel free to open up your project code and make some changes you should see the changes in your development environment isntantainusly.
 
 ## Publishing your prototype to the internet (gatsby only)
 
