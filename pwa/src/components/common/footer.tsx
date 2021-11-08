@@ -3,6 +3,8 @@ import * as React from "react";
 import {ThemeSwitcher} from "../theme-switcher/theme-switcher";
 import {Grid} from "@mui/material";
 
+
+
 const useStyles = makeStyles((theme) => ({
   footerStyle: {
     marginTop: 50
@@ -21,19 +23,29 @@ export default function Footer() {
       <Grid container>
         <Grid item xs={8}>
           <address className="utrecht-page-footer__address utrecht-page-footer__address--reset-address">
-            <h2 className="utrecht-heading-2 utrecht-heading-2--reset-h2">Gemeente Demodam</h2>
             <section>
-              <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Telefoon</h3>
+              <h5 className="utrecht-heading-3 utrecht-heading-3--distanced">Diensten</h5>
               <p className="utrecht-paragraph utrecht-paragraph--distanced">
-                <a href="tel:+31302860000" className="utrecht-link utrecht-link--telephone">12345</a>
+                <a href="https://nijmegen.commonground.nu/moving" className="utrecht-link utrecht-link">Verhuizen</a><br />
+                <a href="https://nijmegen.commonground.nu/marriage" className="utrecht-link utrecht-link">Huwelijk</a><br />
+                <a href="https://nijmegen.commonground.nu/certificates"className="utrecht-link utrecht-link">Uittreksels</a>
               </p>
             </section>
             <section>
-              <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Adres</h3>
+              <h5 className="utrecht-heading-3 utrecht-heading-3--distanced">Contact</h5>
               <p className="utrecht-paragraph utrecht-paragraph--distanced">
-                <strong>Stadskantoor</strong><br />
-                Demodamstraat 1<br />
-
+                <strong>Stadswinkel, Mariënburg 30</strong><br />
+                <a href="tel:14024" className="utrecht-link utrecht-link--telephone">14024</a><br />
+                <a href="mailto:gemeente@nijmegen.nl"
+                   className="utrecht-link utrecht-link--telephone">gemeente@nijmegen.nl</a>
+              </p>
+            </section>
+            <section>
+              <h5 className="utrecht-heading-3 utrecht-heading-3--distanced">Openingstijden</h5>
+              <p className="utrecht-paragraph utrecht-paragraph--distanced">
+                <strong>Maandag - woensdag: 9.00 - 17.00</strong><br />
+                <strong>Donderdag: 9.00 - 20.00</strong><br />
+                <strong>Vrijdag: 9.00 - 17.00</strong>
               </p>
             </section>
           </address>
