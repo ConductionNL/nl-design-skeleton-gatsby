@@ -1,5 +1,6 @@
 import * as React from "react"
-import {Avatar, Card, CardActionArea, CardContent, Grid, Link} from "@mui/material";
+import { Avatar, Card, CardActionArea, CardContent, Grid } from "@mui/material";
+import { Link } from "gatsby"
 import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -45,6 +46,28 @@ const IndexPage = () => {
                 INLOGGEN
               </b>
             </a>
+          </button>
+
+          <br/>
+          <br/>
+
+          <button class="utrecht-button" type="button">
+            <Link href="/cases">
+              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
+                Mijn aanvragen
+              </b>
+            </Link>
+          </button>
+
+          <br/>
+          <br/>
+
+          <button class="utrecht-button" type="button">
+            <Link href="/products">
+              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
+                Diensten
+              </b>
+            </Link>
           </button>
 
 

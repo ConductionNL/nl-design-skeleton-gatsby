@@ -28,9 +28,9 @@ const IndexPage = () => {
   return (
       <Layout>
         <main>
-            <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Mijn aanvragen</h1>
+            <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Diensten</h1>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
-              Hier vind u uw bestaande aanvragen voor verschillende zaken.
+              Hier vind u diensten en producten waar u gebruik van kunt maken.
         </h4>
 
         <div class="utrecht-html">
