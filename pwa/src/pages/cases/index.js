@@ -1,7 +1,7 @@
 import * as React from "react"
-import {Avatar, Card, CardActionArea, CardContent, Grid, Link} from "@mui/material";
-import Layout from "../components/common/layout";
-import {useUrlContext} from "../context/urlContext";
+import {Avatar, Card, CardActionArea, CardContent, Grid} from "@mui/material";
+import Layout from "../../components/common/layout";
+import {useUrlContext} from "../../context/urlContext";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import {
   AccountBalance,
@@ -28,8 +28,7 @@ const IndexPage = () => {
   return (
       <Layout>
         <main>
-        <title>Demodam</title>
-        <Link href="/cases">Link naar cases</Link>
+          <title>Demodam</title>
           <div style={{textAlign: 'center'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Demodam</h1>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
