@@ -29,7 +29,9 @@ const IndexPage = () => {
       <Layout>
         <main>
         <title>Demodam</title>
-        <Link href="/cases">Link naar cases</Link>
+        <Link href="/cases">Link naar cases</Link><br/>
+          <Link href="/data">Link naar identiteit pagina</Link><br/>
+          <Link href="/vault">Link naar mijn kluis pagina</Link>
           <div style={{textAlign: 'center'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Demodam</h1>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
