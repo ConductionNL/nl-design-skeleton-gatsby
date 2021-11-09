@@ -1,20 +1,8 @@
 import * as React from "react"
-import { Avatar, CardActionArea, CardContent, Grid } from "@mui/material";
 import { Link } from "gatsby"
 import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DigiDImg from "../images/digid_button.svg";
-import {
-  AccountBalance,
-  AccountTree,
-  BusinessCenter,
-  Description,
-  Group, Groups,
-  Person,
-  PersonOutline, RecordVoiceOver
-} from "@mui/icons-material";
-import { Accordion, AccordionSummary, AccordionDetails, Paragraph, ExpandMore, Card } from "@gemeente-denhaag/denhaag-component-library";
 import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
 
 // styles
@@ -37,9 +25,9 @@ const IndexPage = () => {
         <title>Demodam</title>
           <div style={{textAlign: 'left'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Welkom</h1>
-          {/*<Link href="/cases">Link naar cases</Link><br/>*/}
-          <Link href="/data">Link naar identiteit pagina</Link><br/>
-          <Link href="/vault">Link naar mijn kluis pagina</Link>
+          {/*<Link to="/cases">Link naar cases</Link><br/>*/}
+          <Link to="/data">Link naar identiteit pagina</Link><br/>
+          <Link to="/vault">Link naar mijn kluis pagina</Link>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
               Dit is de skeleton NL Design applicatie.
             </h4>
@@ -59,7 +47,7 @@ const IndexPage = () => {
           <br/>
 
           <button class="utrecht-button" type="button">
-            <Link href="/cases">
+            <Link to="/cases">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Mijn aanvragen
               </b>
@@ -70,7 +58,7 @@ const IndexPage = () => {
           <br/>
 
           <button class="utrecht-button" type="button">
-            <Link href="/products">
+            <Link to="/products">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Diensten
               </b>
