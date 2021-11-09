@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#A80A2D',
     boxShadow: "none"
   },
+  text: {
+
+  },
 
 }));
 
@@ -23,13 +26,15 @@ export default function MainMenu() {
   const classes = useStyles();
 
   return (
-    <div className="utrecht-navhtml">
-      <nav className="topnav">
-        <ul className="utrecht-topnav__list">
-          <li className="utrecht-topnav__item">
+
+    <div className="utrecht-navhtml" >
+      <nav className="topnav"   >
+        <ul className="utrecht-topnav__list" >
+          <li className="utrecht-topnav__item" >
             <a className="utrecht-topnav__link"
                href="/"
-               target="_blank">Inloggen</a>
+               target="_blank" style={{color:'#FFFFFF'  ,backgroundColor: '#A80A2D', fontSize:'20px',
+              textAlign:'right' , padding:'20px', fontFamily:'Arial'}}>Inloggen</a>
           </li>
         </ul>
       </nav>
