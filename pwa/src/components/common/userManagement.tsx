@@ -1,6 +1,7 @@
 import * as React from "react";
 import {useUrlContext} from "../../context/urlContext";
-import {useUserContext} from "../../context/userContext";
+import { useUserContext } from "../../context/userContext";
+import { navigate } from "gatsby"
 
 
 export default function UserManagement() {
@@ -8,9 +9,8 @@ export default function UserManagement() {
 
   const handleLogin = () => {
     if (typeof window !== "undefined") {
-      let userContext = useUserContext();
       let context = useUrlContext();
-
+      let info;
 
       fetch(context.meUrl, {
         credentials: 'include',
@@ -18,23 +18,26 @@ export default function UserManagement() {
       })
         .then(response => response.json())
         .then((data) => {
-          setInfo(data);
+          setInfo(data)
         });
+    }
+    let userContext = useUserContext();
+    const params = new URLSearchParams(window.location.search);
 
-      const params = new URLSearchParams(window.location.search);
-
-      if (info !== null && info !== undefined && params.has('state')) {
-        let data = {
-          bsn: info.email,
-          name: info.name,
-          firstName: info.first_name,
-          lastName: info.last_name,
-        }
-
-        userContext.setUser(null);
-        sessionStorage.setItem('user', JSON.stringify(data));
-        return null;
+    if (info !== null && info !== undefined && params.has('state')) {
+      let data = {
+        bsn: info.email,
+        name: info.name,
+        firstName: info.first_name,
+        lastName: info.last_name,
       }
+
+      userContext.setUser(null);
+
+      sessionStorage.setItem('user', JSON.stringify(data));
+      navigate("/data");
+      return null;
+
     }
   }
 

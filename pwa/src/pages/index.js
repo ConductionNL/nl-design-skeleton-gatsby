@@ -27,20 +27,28 @@ const IndexPage = () => {
               Dit is de skeleton NL Design applicatie.
             </h4>
             <p className="utrecht-p">
-              Hier kunt u verschillende NL Design tokens testen en applicaties maken waarbij NL Design gebruikt wordt.
+            Het doel van deze skeleton applicatie is om meerdere design tokens te testen over een set NL Design componenten. Ook zou je deze applicatie als template kunnen gebruiken om zelf een app te bouwen in NL Design. De link naar onze github repo: https://github.com/ConductionNL/nl-design-skeleton-gatsby
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined &&
-            <button class="utrecht-button" type="button">
-              <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
-                <img src={DigiDImg} width='55px' height='55px' />
-                <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
-                  INLOGGEN
-                </b>
-              </a>
-            </button>
-          }
+            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
+              <button class="utrecht-button" type="button">
+                <Link to="/data">
+                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '15px' }}>
+                    MIJN GEGEVENS
+                  </b>
+                </Link>
+              </button> :
+
+              <button class="utrecht-button" type="button">
+                <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+                  <img src={DigiDImg} width='55px' height='55px' />
+                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
+                    INLOGGEN
+                  </b>
+                </a>
+              </button>
+        }
 
           <br/>
           <br/>
