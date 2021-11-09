@@ -1,5 +1,5 @@
 import * as React from "react"
-import {Avatar, Card, CardActionArea, CardContent, Grid} from "@mui/material";
+import {Avatar, Grid, GridItem} from "@mui/material";
 import Layout from "../../components/common/layout";
 import {useUrlContext} from "../../context/urlContext";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -12,6 +12,7 @@ import {
   Person,
   PersonOutline, RecordVoiceOver
 } from "@mui/icons-material";
+import { Card } from "@gemeente-denhaag/denhaag-component-library";
 
 // styles
 const headingStyles = {
@@ -33,25 +34,29 @@ const IndexPage = () => {
               Hier vind u diensten en producten waar u gebruik van kunt maken.
         </h4>
 
-        <div class="utrecht-html">
-          <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." class="">
-            <caption>Hier kunnen we een caption neerzetten</caption>
-            <thead>
-              <tr>
-                <th scope="col">Type</th>
-                <th scope="col" class="numeric">Status</th>
-                <th scope="col" class="numeric">Startdatum</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Huwelijk</td>
-                <td class="numeric">Pending</td>
-                <td class="numeric">8-11-2021</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <Card
+          date={new Date()}
+          href="https://github.com"
+          onClick={function noRefCheck() { }}
+          subTitle="Verhuizen, emigreren, briefadres, geheimhouding persoonsgegevens."
+          title="Verhuizen"
+        />
+
+        <Card
+          date={new Date()}
+          href="https://github.com"
+          onClick={function noRefCheck() { }}
+          subTitle="Uittreksel burgelijke stand, basisregistratie personen, VOG."
+          title="Uittreksel en verklaringen"
+        />
+        <Card
+          date={new Date()}
+          href="https://github.com"
+          onClick={function noRefCheck() { }}
+          subTitle="Trouwen, geregistreerd partnerschap, scheiden."
+          title="Trouwen, partnerschap, scheiden"
+        />
+
         </main>
       </Layout>
 

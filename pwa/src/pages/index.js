@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Avatar, Card, CardActionArea, CardContent, Grid } from "@mui/material";
+import { Avatar, CardActionArea, CardContent, Grid } from "@mui/material";
 import { Link } from "gatsby"
 import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
@@ -14,6 +14,7 @@ import {
   Person,
   PersonOutline, RecordVoiceOver
 } from "@mui/icons-material";
+import { Accordion, AccordionSummary, AccordionDetails, Paragraph, ExpandMore, Card } from "@gemeente-denhaag/denhaag-component-library";
 
 // styles
 const headingStyles = {
@@ -72,6 +73,20 @@ const IndexPage = () => {
               </b>
             </Link>
           </button>
+
+
+
+          {/*<Accordion>*/}
+          {/*  <AccordionSummary expandIcon={<ExpandMore />}>*/}
+          {/*    <Paragraph>Click me to collapse me!</Paragraph>*/}
+          {/*  </AccordionSummary>*/}
+            {/*<AccordionDetails>*/}
+            {/*  <Paragraph>*/}
+            {/*    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo*/}
+            {/*    lobortis eget.*/}
+            {/*  </Paragraph>*/}
+            {/*</AccordionDetails>*/}
+          {/*</Accordion>*/}
 
 
             {/*<Grid container spacing={2} sx={{marginTop: '20px'}}>*/}
