@@ -15,6 +15,7 @@ import {
   PersonOutline, RecordVoiceOver
 } from "@mui/icons-material";
 import { Accordion, AccordionSummary, AccordionDetails, Paragraph, ExpandMore, Card } from "@gemeente-denhaag/denhaag-component-library";
+import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
 
 // styles
 const headingStyles = {
@@ -31,10 +32,12 @@ const IndexPage = () => {
   return (
       <Layout>
         <main>
+        <UtrechtHeading1>The Quick Brown Fox Jumps Over The Lazy Dog</UtrechtHeading1>
+        <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">The Quick Brown Fox Jumps Over The Lazy Dog</h1>
         <title>Demodam</title>
           <div style={{textAlign: 'left'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Welkom</h1>
-        {/*<Link href="/cases">Link naar cases</Link><br/>*/}
+          {/*<Link href="/cases">Link naar cases</Link><br/>*/}
           <Link href="/data">Link naar identiteit pagina</Link><br/>
           <Link href="/vault">Link naar mijn kluis pagina</Link>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
@@ -73,6 +76,10 @@ const IndexPage = () => {
               </b>
             </Link>
           </button>
+
+          <br />
+          <br />
+
 
 
 
