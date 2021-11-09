@@ -1,6 +1,8 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import {Avatar, Card, CardActionArea, CardContent, Grid} from "@mui/material";
 import Layout from "../../components/common/layout";
+import Breadcrumbs from "../../components/common/breadcrumbs";
 import {useUrlContext} from "../../context/urlContext";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import {
@@ -18,21 +20,7 @@ function Index() {
   return <>
     <Layout>
       <main>
-        <nav className="utrecht-breadcrumb">
-          <ol className="utrecht-breadcrumb__list">
-            <li className="utrecht-breadcrumb__item">
-              <a className="utrecht-breadcrumb__link utrecht-breadcrumb__link--focus utrecht-link utrecht-link--focus"
-                 href="/">
-                <span className="utrecht-breadcrumb__text">Home</span>
-              </a>
-            </li>
-            <li className="utrecht-breadcrumb__item">
-              <a className="utrecht-breadcrumb__link utrecht-link" href="/vault">
-                <span className="utrecht-breadcrumb__text">Mijn kluis</span>
-              </a>
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Mijn kluis', href: '/vault' } ]} />
         <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Mijn kluis</h1>
         <div className="utrecht-html">
           <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." className="">

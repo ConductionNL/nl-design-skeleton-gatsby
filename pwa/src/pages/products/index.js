@@ -1,7 +1,8 @@
 import * as React from "react"
 import {Avatar, Grid, GridItem} from "@mui/material";
 import Layout from "../../components/common/layout";
-import {useUrlContext} from "../../context/urlContext";
+import { useUrlContext } from "../../context/urlContext";
+import Breadcrumbs from "../../components/common/breadcrumbs";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import {
   AccountBalance,
@@ -27,7 +28,8 @@ const IndexPage = () => {
     const context = useUrlContext();
 
   return (
-      <Layout>
+    <Layout>
+        <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Diensten', href: '/products' }]} />
         <main>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Diensten</h1>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
