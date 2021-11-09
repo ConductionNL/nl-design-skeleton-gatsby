@@ -10,7 +10,6 @@ export default function UserManagement() {
   const handleLogin = () => {
     if (typeof window !== "undefined") {
       let context = useUrlContext();
-      let info;
 
       fetch(context.meUrl, {
         credentials: 'include',
