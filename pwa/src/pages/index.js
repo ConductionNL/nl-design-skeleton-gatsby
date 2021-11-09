@@ -33,7 +33,7 @@ const IndexPage = () => {
         <title>Demodam</title>
           <div style={{textAlign: 'left'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Welkom</h1>
-        <Link href="/cases">Link naar cases</Link><br/>
+        {/*<Link href="/cases">Link naar cases</Link><br/>*/}
           <Link href="/data">Link naar identiteit pagina</Link><br/>
           <Link href="/vault">Link naar mijn kluis pagina</Link>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
