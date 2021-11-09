@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appbar: {
-    backgroundColor: '#AD9156',
+    backgroundColor: '#A80A2D',
     boxShadow: "none"
   },
 
@@ -27,12 +27,10 @@ export default function MainMenu() {
       <nav className="topnav">
         <ul className="utrecht-topnav__list">
           <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link utrecht-topnav__link--current" href="/">Home</a>
-          </li>
-          <li className="utrecht-topnav__item">
             <a className="utrecht-topnav__link"
-               href="https://demodam.org/" target="_blank">Demodam.org</a>
-          </li>,
+               href="/"
+               target="_blank">Inloggen</a>
+          </li>
         </ul>
       </nav>
     </div>
