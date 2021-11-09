@@ -1,31 +1,10 @@
 import * as React from "react"
-import {Avatar, Grid, GridItem} from "@mui/material";
+import {Grid} from "@mui/material";
 import Layout from "../../components/common/layout";
-import { useUrlContext } from "../../context/urlContext";
 import Breadcrumbs from "../../components/common/breadcrumbs";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import {
-  AccountBalance,
-  AccountTree,
-  BusinessCenter,
-  Description,
-  Group, Groups,
-  Person,
-  PersonOutline, RecordVoiceOver
-} from "@mui/icons-material";
 import { Card } from "@gemeente-denhaag/denhaag-component-library";
 
-// styles
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-// markup
 const IndexPage = () => {
-    const context = useUrlContext();
 
   return (
     <Layout>
