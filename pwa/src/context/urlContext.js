@@ -16,7 +16,7 @@ export function UrlContextWrapper({ children }) {
       meUrl = 'http://localhost/me';
       apiUrl = 'http://localhost/api';
       baseUrl = 'http://localhost';
-      frontendUrl = 'http://localhost:3000';
+      frontendUrl = 'http://localhost:8000';
       organization = 'http://webresourcecatalogus.conduction.svc.cluster.local/organizations/b2d3176e-f1c6-4365-ab86-dd253c65fc43';
     } else {
       meUrl = 'https://verhuizen.accp.s-hertogenbosch.nl/api/users/me';

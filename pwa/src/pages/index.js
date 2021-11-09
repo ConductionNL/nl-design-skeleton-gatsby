@@ -4,18 +4,13 @@ import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import DigiDImg from "../images/digid_button.svg";
 import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
+import { useUserContext } from "../context/userContext";
 
-// styles
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-// markup
 const IndexPage = () => {
-    const context = useUrlContext();
+  const context = useUrlContext();
+  let userContext = useUserContext();
+
+  console.log(userContext);
 
   return (
       <Layout>
@@ -33,15 +28,19 @@ const IndexPage = () => {
             </h4>
             <p className="utrecht-p">
               Hier kunt u verschillende NL Design tokens testen en applicaties maken waarbij NL Design gebruikt wordt.
-            </p>
-          <button class="utrecht-button" type="button">
-            <a href="/digid/login">
-              <img src={DigiDImg} width='55px' height='55px' />
-              <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
-                INLOGGEN
-              </b>
-            </a>
-          </button>
+          </p>
+
+          {
+            context.baseUrl !== null && context.baseUrl != undefined &&
+            <button class="utrecht-button" type="button">
+              <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+                <img src={DigiDImg} width='55px' height='55px' />
+                <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
+                  INLOGGEN
+                </b>
+              </a>
+            </button>
+          }
 
           <br/>
           <br/>
@@ -67,9 +66,6 @@ const IndexPage = () => {
 
           <br />
           <br />
-
-
-
 
           {/*<Accordion>*/}
           {/*  <AccordionSummary expandIcon={<ExpandMore />}>*/}
