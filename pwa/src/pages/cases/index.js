@@ -1,30 +1,8 @@
 import * as React from "react"
-import {Avatar, Card, CardActionArea, CardContent, Grid} from "@mui/material";
 import Layout from "../../components/common/layout";
 import Breadcrumbs from "../../components/common/breadcrumbs";
-import {useUrlContext} from "../../context/urlContext";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import {
-  AccountBalance,
-  AccountTree,
-  BusinessCenter,
-  Description,
-  Group, Groups,
-  Person,
-  PersonOutline, RecordVoiceOver
-} from "@mui/icons-material";
 
-// styles
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-// markup
 const IndexPage = () => {
-    const context = useUrlContext();
 
   return (
       <Layout>
@@ -36,7 +14,7 @@ const IndexPage = () => {
         </h4>
 
         <div class="utrecht-html">
-          <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." class="">
+          <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." style={{ width: "100%" }}>
             <caption>Hier kunnen we een caption neerzetten</caption>
             <thead>
               <tr>
