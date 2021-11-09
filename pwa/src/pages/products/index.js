@@ -33,29 +33,36 @@ const IndexPage = () => {
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
               Hier vind u diensten en producten waar u gebruik van kunt maken.
         </h4>
+        <Grid container spacing={2}>
+          <Grid item sm={4}>
+            <Card
+              date={new Date()}
+              href="https://github.com"
+              onClick={function noRefCheck() { }}
+              subTitle="Verhuizen, emigreren, briefadres, geheimhouding persoonsgegevens."
+              title="Verhuizen"
+            />
+          </Grid>
 
-        <Card
-          date={new Date()}
-          href="https://github.com"
-          onClick={function noRefCheck() { }}
-          subTitle="Verhuizen, emigreren, briefadres, geheimhouding persoonsgegevens."
-          title="Verhuizen"
-        />
-
-        <Card
-          date={new Date()}
-          href="https://github.com"
-          onClick={function noRefCheck() { }}
-          subTitle="Uittreksel burgelijke stand, basisregistratie personen, VOG."
-          title="Uittreksel en verklaringen"
-        />
-        <Card
-          date={new Date()}
-          href="https://github.com"
-          onClick={function noRefCheck() { }}
-          subTitle="Trouwen, geregistreerd partnerschap, scheiden."
-          title="Trouwen, partnerschap, scheiden"
-        />
+          <Grid item sm={4}>
+            <Card
+              date={new Date()}
+              href="https://github.com"
+              onClick={function noRefCheck() { }}
+              subTitle="Uittreksel burgelijke stand, basisregistratie personen, VOG."
+              title="Uittreksel en verklaringen"
+            />
+          </Grid>
+          <Grid item sm={4}>
+            <Card
+              date={new Date()}
+              href="https://github.com"
+              onClick={function noRefCheck() { }}
+              subTitle="Trouwen, geregistreerd partnerschap, scheiden."
+              title="Trouwen, partnerschap, scheiden"
+             />
+          </Grid>
+        </Grid>
 
         </main>
       </Layout>
