@@ -20,9 +20,6 @@ const IndexPage = () => {
         <title>Demodam</title>
           <div style={{textAlign: 'left'}}>
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Welkom</h1>
-          {/*<Link to="/cases">Link naar cases</Link><br/>*/}
-          <Link to="/data">Link naar identiteit pagina</Link><br/>
-          <Link to="/vault">Link naar mijn kluis pagina</Link>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
               Dit is de skeleton NL Design applicatie.
             </h4>
@@ -68,6 +65,28 @@ const IndexPage = () => {
             <Link to="/products">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Diensten
+              </b>
+            </Link>
+          </button>
+
+          <br />
+          <br />
+
+          <button class="utrecht-button" type="button">
+            <Link to="/vault">
+              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
+                Kluis
+              </b>
+            </Link>
+          </button>
+
+          <br />
+          <br />
+
+          <button class="utrecht-button" type="button">
+            <Link to="/vault">
+              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
+                Mijn gegevens
               </b>
             </Link>
           </button>
