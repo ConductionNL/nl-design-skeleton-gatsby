@@ -7,6 +7,8 @@ import * as React from "react";
 import {useEffect} from "react";
 import {useUserContext} from "../../context/userContext";
 import {useUrlContext} from "../../context/urlContext";
+import {getUser, isLoggedIn, logout} from "../../services/auth";
+import {navigate} from "gatsby-link";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -34,14 +36,11 @@ export default function MainMenu() {
   const classes = useStyles();
 
   const handleLogout = () => {
-    sessionStorage.setItem('user', null);
-
+      logout();
+      navigate("/");
   }
 
-  let userContext = useUserContext();
   let context = useUrlContext();
-
-  console.log(context);
 
   return (
 
@@ -50,25 +49,22 @@ export default function MainMenu() {
         <ul className="utrecht-topnav__list" >
           <li className="utrecht-topnav__item">
             {
-              userContext.user !== null &&
+              isLoggedIn() &&
               <span style={{color: 'white'}}>
               {
-                userContext.user.name
+                getUser().name
               }
                 </span>
             }
           </li>
           <li className="utrecht-topnav__item" >
             {
-              userContext.user !== null
+              isLoggedIn()
                 ?
                 <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
                 :
-                // <a href="http://localhost/login/adfs/conduction">
-                //   <span style={{color: 'white'}}>Inloggen</span>
-                // </a>
                 <a
-                  href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/moving?state=8412312632"}>
+                  href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
                   <span style={{color: 'white'}}>Inloggen</span>
                 </a>
             }
