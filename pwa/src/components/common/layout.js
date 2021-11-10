@@ -25,8 +25,6 @@ export default function Layout({ children }) {
         <>
         <ThemeProvider theme={theme}>
 
-          <UserManagement />
-
               <Helmet>
                 <link rel="stylesheet" href="https://unpkg.com/@conductionnl/nijmegen-design-tokens/dist/index.css"/>
               </Helmet>

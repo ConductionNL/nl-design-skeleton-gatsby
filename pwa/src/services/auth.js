@@ -5,8 +5,8 @@ export const getUser = () =>
     ? JSON.parse(window.sessionStorage.getItem("user"))
     : {}
 
-const setUser = user =>
-  window.localStorage.setItem("user", JSON.stringify(user))
+export const setUser = user =>
+  window.sessionStorage.setItem("user", JSON.stringify(user))
 
 export const handleLogin = (data) => {
     return setUser(data)
@@ -17,7 +17,6 @@ export const isLoggedIn = () => {
   return !!user.username
 }
 
-export const logout = callback => {
+export const logout = () => {
   setUser({})
-  callback()
 }
