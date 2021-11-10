@@ -38,7 +38,7 @@ const IndexPage = () => {
               </button> :
 
               <button class="utrecht-button" type="button">
-                <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+                <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
                   <img src={DigiDImg} width='55px' height='55px' />
                   <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
                     INLOGGEN
