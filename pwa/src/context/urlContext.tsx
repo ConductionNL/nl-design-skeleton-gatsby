@@ -1,6 +1,7 @@
-import React from "react";
+import {createContext, useContext} from 'react';
+import * as React from "react";
 
-const UrlContext = React.createContext(undefined);
+const UrlContext = createContext(undefined);
 
 export function UrlContextWrapper({ children }) {
 
@@ -44,5 +45,5 @@ export function UrlContextWrapper({ children }) {
 }
 
 export function useUrlContext() {
-  return React.useContext(UrlContext);
+  return useContext(UrlContext);
 }
