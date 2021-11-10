@@ -41,7 +41,7 @@ export default function Footer() {
             <Typography variant="h5"  className="utrecht-heading-3 utrecht-heading-3--distanced">Contact</Typography>
           </Box>
           <Box>
-            <LocationOnIcon/>Stadswinkel, Mariënburg 30
+            <LocationOnIcon/>
           </Box>
           <Box>
             <CallIcon/>
@@ -50,7 +50,7 @@ export default function Footer() {
           <Box>
             <MailOutlineIcon/>
             <a href="mailto:gemeente@nijmegen.nl"
-               className="utrecht-link utrecht-link--telephone">gemeente@nijmegen.nl</a>
+               className="utrecht-link utrecht-link--telephone">ifo@demodam.nl</a>
           </Box>
         </Grid>
        <Grid item xs={4}>
