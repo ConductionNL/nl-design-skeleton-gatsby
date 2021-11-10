@@ -6,7 +6,8 @@ import {ThemeProvider} from "@mui/styles";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import MainMenu from "./menu";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import UserManagement from "./userManagement";
 
 const theme = createTheme({
     palette: {
@@ -22,7 +23,10 @@ const theme = createTheme({
 export default function Layout({ children }) {
     return (
         <>
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+
+          <UserManagement />
+
               <Helmet>
                 <link rel="stylesheet" href="https://unpkg.com/@conductionnl/demodam-design-tokens/src/index.css"/>
               </Helmet>
