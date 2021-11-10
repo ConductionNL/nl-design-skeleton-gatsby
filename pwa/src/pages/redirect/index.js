@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {useUrlContext} from "../../context/urlContext";
 import {navigate} from "gatsby-link";
 import {setUser} from "../../services/auth";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Redirect = () => {
 
@@ -31,16 +32,14 @@ const Redirect = () => {
       });
   }
 
-  useEffect(() => {
-    handleLogin();
-  }, []);
+  // useEffect(() => {
+  //   handleLogin();
+  // }, []);
 
   return (
     <Layout>
       <main>
-        <p>
-          redirecting
-        </p>
+          <CircularProgress />
       </main>
     </Layout>
 
