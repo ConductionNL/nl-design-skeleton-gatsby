@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import {Stack} from "@mui/material";
 import * as React from "react";
+import { useUserContext } from "../../context/userContext";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appbar: {
-    backgroundColor: '#AD9156',
+    backgroundColor: '#A80A2D',
     boxShadow: "none"
   },
 
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function MainMenu() {
+  let userContext = useUserContext();
 
   const classes = useStyles();
 
@@ -27,12 +29,15 @@ export default function MainMenu() {
       <nav className="topnav">
         <ul className="utrecht-topnav__list">
           <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link utrecht-topnav__link--current" href="/">Home</a>
+            {
+              userContext.user !== undefined && userContext.user !== null ?
+                <span>{userContext.user.name}</span> :
+                <a className="utrecht-topnav__link"
+                  href="/"
+                  target="_blank">Inloggen</a>
+
+            }
           </li>
-          <li className="utrecht-topnav__item">
-            <a className="utrecht-topnav__link"
-               href="https://demodam.org/" target="_blank">Demodam.org</a>
-          </li>,
         </ul>
       </nav>
     </div>
