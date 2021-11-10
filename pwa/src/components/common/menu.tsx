@@ -4,9 +4,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import {Stack} from "@mui/material";
 import * as React from "react";
-import {useRouter} from 'next/router';
-import {useAppContext} from "../context/state";
-import {useUserContext} from "../context/userContext";
+import { useUserContext } from "../../context/userContext";
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -30,6 +29,7 @@ const handleLogout = (context) => {
 }
 
 export default function MainMenu() {
+  let userContext = useUserContext();
 
   const classes = useStyles();
   const router = useRouter()
@@ -73,33 +73,17 @@ export default function MainMenu() {
   let context = useAppContext();
 
   return (
-
-    <div className="utrecht-navhtml" >
-      <nav className="topnav"   >
-        <ul className="utrecht-topnav__list" >
+    <div className="utrecht-navhtml">
+      <nav className="topnav">
+        <ul className="utrecht-topnav__list">
           <li className="utrecht-topnav__item">
             {
-              userContext.user !== null &&
-              <span style={{color: 'white'}}>
-              {
-                userContext.user.name
-              }
-                </span>
-            }
-          </li>
-          <li className="utrecht-topnav__item" >
-            {
-              userContext.user !== null
-                ?
-                <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
-                :
-                // <a href="http://localhost/login/adfs/conduction">
-                //   <span style={{color: 'white'}}>Inloggen</span>
-                // </a>
-                <a
-                  href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/moving?state=8412312632"}>
-                  <span style={{color: 'white'}}>Inloggen</span>
-                </a>
+              userContext.user !== undefined && userContext.user !== null ?
+                <span>{userContext.user.name}</span> :
+                <a className="utrecht-topnav__link"
+                  href="/"
+                  target="_blank">Inloggen</a>
+
             }
           </li>
         </ul>

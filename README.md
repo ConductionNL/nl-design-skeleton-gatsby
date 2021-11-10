@@ -14,9 +14,9 @@ In order to set up your own project you will need an github account and be logge
 
 ## Spinning up you  local environment
 
-For this part of the tutorial you will need and git client, node.js, and yarn on your  local machine
+For this part of the tutorial you will need a git client, node.js, and yarn on your local machine
 
-In order to start developing locally you need to clone your new repository to your local machine. Then open your favorite CLI and simply navigate to the folder containing your repository and start up gatsby or next.js in development mode with the following commands.
+In order to start developing locally you need to clone your new repository to your local machine. Then open your favorite CLI and simply navigate to the folder containing your repository then go into /pwa and start up gatsby or next.js in development mode with the following commands.
 
 **Nextjs**
 
