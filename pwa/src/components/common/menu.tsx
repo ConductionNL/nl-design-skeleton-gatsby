@@ -40,10 +40,7 @@ export default function MainMenu() {
       navigate("/");
   }
 
-  let userContext = useUserContext();
   let context = useUrlContext();
-
-  console.log(context);
 
   return (
 
@@ -66,9 +63,6 @@ export default function MainMenu() {
                 ?
                 <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
                 :
-                // <a href="http://localhost/login/adfs/conduction">
-                //   <span style={{color: 'white'}}>Inloggen</span>
-                // </a>
                 <a
                   href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
                   <span style={{color: 'white'}}>Inloggen</span>
