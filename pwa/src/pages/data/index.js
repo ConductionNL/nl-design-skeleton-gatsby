@@ -63,134 +63,157 @@ function Index() {
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Identiteit</h1>
             <br /><br />
 
-                  {
-                    user !== undefined && user !== null &&
-                      <>
-                        <div role="separator" aria-orientation="horizontal" class="utrecht-separator utrecht-separator--distanced"></div>
-                        <br />
-                        <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Persoonlijke gegevens</h3>
-                        {
-                          user !== null && user.naam !== undefined && user.naam.voornamen &&
-                          <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Voornamen: <span style={{ textAlign: "right", float: "right" }}>{user.naam.voornamen}</span></h5>
-                        }
-                        {
-                          user !== null && user.naam !== undefined && user.naam.geslachtsnaam &&
-                          <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{user.naam.geslachtsnaam}</span></h5>
-                        }
-                        {
-                          user !== null && user !== undefined && user.geslachtsaanduiding !== undefined &&
-                          <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{user.geslachtsaanduiding}</span></h5>
-                        }
-                        <br />
-                      </>
-                  }
+            {
+              user !== undefined && user !== null &&
+              <><Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Persoonlijke gegevens</h3></Paragraph>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Paragraph>
+                    <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Voornamen: <span style={{ textAlign: "right", float: "right" }}>Lorem ipsum </span></h5>
+                    {
+                      user !== null && user.naam !== undefined && user.naam.voornamen &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>Voornamen: <span style={{ textAlign: "right", float: "right" }}>{user.naam.voornamen}</span></h5>
+                    }
+                    {
+                      user !== null && user.naam !== undefined && user.naam.geslachtsnaam &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{user.naam.geslachtsnaam}</span></h5>
+                    }
+                    {
+                      user !== null && user !== undefined && user.geslachtsaanduiding !== undefined &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{user.geslachtsaanduiding}</span></h5>
+                    }
+                  </Paragraph>
+                </AccordionDetails>
+              </Accordion>
+                <br />
+              </>
+            }
 
-                  {
-                    user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].kinderen !== undefined && user['_embedded'].kinderen !== null &&
-                    <>
-                      <div role="separator" aria-orientation="horizontal" class="utrecht-separator utrecht-separator--distanced"></div>
-                      <br />
-                      <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Kinderen</h3>
-                      {
-                        user['_embedded'].kinderen.map((row) => (
-                          <>
-                            {
-                              row.naam.voornamen !== undefined && row.naam.voornamen !== null &&
-                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Voornamen: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voornamen}</span></h5>
-                            }
-                            {
-                              row.naam.voorvoegsel !== undefined && row.naam.voorvoegsel !== null ?
-                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voorvoegsel + ' ' + row.naam.geslachtsnaam}</span></h5> :
-                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.geslachtsnaam}</span></h5>
-                            }
-                            {
-                              row.geslachtsaanduiding !== undefined && row.geslachtsaanduiding !== null &&
-                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{row.geslachtsaanduiding}</span></h5>
-                            }
-                            <br />
-                          </>
-                        ))
-                      }
-                    </>
-                  }
+            {
+              user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].kinderen !== undefined && user['_embedded'].kinderen !== null &&
+              <><Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Kinderen</h3></Paragraph>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Paragraph>
+                    {
+                      user['_embedded'].kinderen.map((row) => (
+                        <>
+                          {
+                            row.naam.voornamen !== undefined && row.naam.voornamen !== null &&
+                            <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Voornamen: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voornamen}</span></h5>
+                          }
+                          {
+                            row.naam.voorvoegsel !== undefined && row.naam.voorvoegsel !== null ?
+                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voorvoegsel + ' ' + row.naam.geslachtsnaam}</span></h5> :
+                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.geslachtsnaam}</span></h5>
+                          }
+                          {
+                            row.geslachtsaanduiding !== undefined && row.geslachtsaanduiding !== null &&
+                            <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{row.geslachtsaanduiding}</span></h5>
+                          }
+                          <br />
+                        </>
+                      ))
+                    }
+                  </Paragraph>
+                </AccordionDetails>
+              </Accordion>
+                <br />
+              </>
+            }
 
-                  {
-                    user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].ouders !== undefined && user['_embedded'].ouders !== null &&
-                    <>
-                      <div role="separator" aria-orientation="horizontal" class="utrecht-separator utrecht-separator--distanced"></div>
-                      <br />
-                      <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Ouders</h3>
+            {
+              user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].ouders !== undefined && user['_embedded'].ouders !== null &&
+              <>
+                <Accordion>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Ouders</h3></Paragraph>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Paragraph>
                       {
                         user['_embedded'].ouders.map((row) => (
                           <>
                             {
                               row.naam.voornamen !== undefined && row.naam.voornamen !== null &&
-                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Voornamen: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voornamen}</span></h5>
+                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Voornamen: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voornamen}</span></h5>
                             }
                             {
                               row.naam.voorvoegsel !== undefined && row.naam.voorvoegsel !== null ?
-                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voorvoegsel + ' ' + row.naam.geslachtsnaam}</span></h5> :
-                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.geslachtsnaam}</span></h5>
+                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.voorvoegsel + ' ' + row.naam.geslachtsnaam}</span></h5> :
+                                <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{row.naam.geslachtsnaam}</span></h5>
                             }
                             {
                               row.geslachtsaanduiding !== undefined && row.geslachtsaanduiding !== null &&
-                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{row.geslachtsaanduiding}</span></h5>
+                              <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{row.geslachtsaanduiding}</span></h5>
                             }
                             <br />
                           </>
                         ))
                       }
-                    </>
-                  }
+                    </Paragraph>
+                  </AccordionDetails>
+                </Accordion>
+                <br />
+              </>
+            }
 
-                  {
-                    user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null &&
-                    <>
-                      <div role="separator" aria-orientation="horizontal" class="utrecht-separator utrecht-separator--distanced"></div>
-                      <br />
-                      <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Woonadres</h3>
+            {
+              user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null &&
+              <>
+                <Accordion>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Woongegevens</h3></Paragraph>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Paragraph>
                       {
                         user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.adresregel1 !== undefined && user.verblijfplaats.adresregel1 !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Straat: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.adresregel1}</span></h5>
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Straat: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.adresregel1}</span></h5>
                       }
                       {
                         user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.woonplaats !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Plaats: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.woonplaats}</span></h5>
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Plaats: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.woonplaats}</span></h5>
                       }
                       {
                         user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.datumAanvangAdreshouding !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Vanaf: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.datumAanvangAdreshouding}</span></h5>
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Vanaf: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.datumAanvangAdreshouding}</span></h5>
                       }
-                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Aantal bewoners: <span style={{ textAlign: "right", float: "right" }}>3</span></h5>
-                      <br />
-                    </>
-                  }
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Aantal bewoners: <span style={{ textAlign: "right", float: "right" }}>3</span></h5>
+                    </Paragraph>
+                  </AccordionDetails>
+                </Accordion>
+                <br />
+              </>
+            }
 
-                  <div role="separator" aria-orientation="horizontal" class="utrecht-separator utrecht-separator--distanced"></div>
-                  <br />
-                  <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Reisdocumenten</h3>
-                  <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >Paspoort: <span style={{ textAlign: "right", float: "right" }}>16561</span></h5>
-                  <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" >ID: <span style={{ textAlign: "right", float: "right" }}>65321684</span></h5>
+            <>
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Reisdocumenten</h3></Paragraph>
+                </AccordionSummary>
+                <AccordionDetails >
+                  <Paragraph>
+                    <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>Paspoort: <span style={{ textAlign: "right", float: "right" }}>16561</span></h5>
+                    <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>ID: <span style={{ textAlign: "right", float: "right" }}>65321684</span></h5> 
+                  </Paragraph>
+                </AccordionDetails>
+              </Accordion>
+              <br />
+            </>
 
 
 
-                  <Accordion>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <Paragraph>Click me to collapse me!</Paragraph>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget.
-                      </Paragraph>
-                    </AccordionDetails>
-                  </Accordion>
 
-                </Grid>
+          </Grid>
         </Grid>
       </main>
     </Layout>
-    </>
+  </>
 
 }
-    export default Index
+export default Index
