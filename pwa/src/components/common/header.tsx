@@ -5,7 +5,7 @@ export default function Header() {
 
   return (
     <header className="utrecht-page-header">
-      <div style={{textAlign: 'center' , backgroundColor:'#FFFFFF' }} >
+      <div style={{textAlign: 'center' }} >
         <div style={{ padding:'30px' }} >
         <svg version="1.1" className="utrecht-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.57 58.97">
           <g>
