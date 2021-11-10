@@ -4,7 +4,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import {Stack} from "@mui/material";
 import * as React from "react";
-import Link from "next/link";
 import {useRouter} from 'next/router';
 import {useAppContext} from "../context/state";
 import {useUserContext} from "../context/userContext";
@@ -78,19 +77,29 @@ export default function MainMenu() {
     <div className="utrecht-navhtml" >
       <nav className="topnav"   >
         <ul className="utrecht-topnav__list" >
+          <li className="utrecht-topnav__item">
+            {
+              userContext.user !== null &&
+              <span style={{color: 'white'}}>
+              {
+                userContext.user.name
+              }
+                </span>
+            }
+          </li>
           <li className="utrecht-topnav__item" >
             {
               userContext.user !== null
                 ?
                 <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
                 :
-                // <Link href="http://localhost/login/adfs/conduction">
+                // <a href="http://localhost/login/adfs/conduction">
                 //   <span style={{color: 'white'}}>Inloggen</span>
-                // </Link>
-                <Link
+                // </a>
+                <a
                   href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/moving?state=8412312632"}>
                   <span style={{color: 'white'}}>Inloggen</span>
-                </Link>
+                </a>
             }
           </li>
         </ul>
