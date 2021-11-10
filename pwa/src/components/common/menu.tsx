@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#A80A2D',
     boxShadow: "none"
   },
+  text: {
+
+  },
 
 }));
 
