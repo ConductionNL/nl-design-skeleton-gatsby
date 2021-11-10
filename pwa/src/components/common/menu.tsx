@@ -1,12 +1,10 @@
 import makeStyles from '@mui/styles/makeStyles';
-import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import {Stack} from "@mui/material";
 import * as React from "react";
-import {useEffect} from "react";
 import {useUserContext} from "../../context/userContext";
 import {useUrlContext} from "../../context/urlContext";
+
+
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -51,7 +49,7 @@ export default function MainMenu() {
           <li className="utrecht-topnav__item">
             {
               userContext.user !== null &&
-              <span style={{color: 'white'}}>
+              <span>
               {
                 userContext.user.name
               }
@@ -62,14 +60,14 @@ export default function MainMenu() {
             {
               userContext.user !== null
                 ?
-                <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
+                <span onClick={handleLogout} >Uitloggen</span>
                 :
                 // <a href="http://localhost/login/adfs/conduction">
                 //   <span style={{color: 'white'}}>Inloggen</span>
                 // </a>
                 <a
                   href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/moving?state=8412312632"}>
-                  <span style={{color: 'white'}}>Inloggen</span>
+                  <span>Inloggen</span>
                 </a>
             }
           </li>
