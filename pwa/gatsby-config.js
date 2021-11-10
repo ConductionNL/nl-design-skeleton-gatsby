@@ -5,6 +5,7 @@ module.exports = {
     title: "pwa",
   },
   plugins: [
+    `gatsby-plugin-ts`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
