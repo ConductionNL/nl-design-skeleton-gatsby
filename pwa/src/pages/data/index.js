@@ -131,7 +131,7 @@ function Index() {
               <>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Ouders</h3></Paragraph>
+                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Ouders</h3></Paragraph>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Paragraph>
@@ -167,7 +167,7 @@ function Index() {
               <>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Woongegevens</h3></Paragraph>
+                    <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Woongegevens</h3></Paragraph>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Paragraph>
@@ -194,12 +194,12 @@ function Index() {
             <>
               <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                  <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Reisdocumenten</h3></Paragraph>
+                  <Paragraph><h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Reisdocumenten</h3></Paragraph>
                 </AccordionSummary>
                 <AccordionDetails >
                   <Paragraph>
                     <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>Paspoort: <span style={{ textAlign: "right", float: "right" }}>16561</span></h5>
-                    <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>ID: <span style={{ textAlign: "right", float: "right" }}>65321684</span></h5> 
+                    <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>ID: <span style={{ textAlign: "right", float: "right" }}>65321684</span></h5>
                   </Paragraph>
                 </AccordionDetails>
               </Accordion>
