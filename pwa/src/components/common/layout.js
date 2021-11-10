@@ -24,9 +24,9 @@ export default function Layout({ children }) {
         <>
             <ThemeProvider theme={theme}>
               <Helmet>
-                <link rel="stylesheet" href="https://unpkg.com/@conductionnl/demodam-design-tokens/src/index.css"/>
+                <link rel="stylesheet" href="https://unpkg.com/@conductionnl/nijmegen-design-tokens/dist/index.css"/>
               </Helmet>
-              <div className="utrecht-document demodam-theme">
+              <div className="utrecht-document nijmegen-theme">
                 <div className="utrecht-page">
                   <Header/>
                   <MainMenu />
