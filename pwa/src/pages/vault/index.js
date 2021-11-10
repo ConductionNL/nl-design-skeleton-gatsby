@@ -4,20 +4,20 @@ import Breadcrumbs from "../../components/common/breadcrumbs";
 import { Grid } from "@mui/material";
 import ActionMenu from "../../components/common/actionMenu";
 import { documentDownload } from "../../components/utility/DocumentDownload";
-import { useAppContext } from "../context/state";
-import { useUserContext } from "../context/userContext";
 import { useEffect } from 'react';
+import { getUser, isLoggedIn, logout } from "../../services/auth";
+import { navigate } from "gatsby-link";
+import { useUrlContext } from "../../context/urlContext";
 
 function Index() {
 
-  const userContext = useUserContext();
-  const context = useAppContext();
+  const context = useUrlContext();
 
   const [claims, setClaims] = React.useState(null);
 
   useEffect(() => {
-    if (userContext.user !== undefined && userContext.user !== null) {
-      fetch(context.apiUrl + "/gateways/waardepapieren-register/certificates?person=" + userContext.user.bsn, {
+    if (getUser() !== undefined && getUser() !== null) {
+      fetch(context.apiUrl + "/gateways/waardepapieren-register/certificates?person=" + getUser().bsn, {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
@@ -29,8 +29,8 @@ function Index() {
           console.log('Certs:')
           console.log(data)
         });
-    }, []);
-  } 
+    }
+      }, []);
 
   return <>
     <Layout>

@@ -4,6 +4,7 @@ import Breadcrumbs from "../../components/common/breadcrumbs";
 import { Card } from "@gemeente-denhaag/denhaag-component-library";
 import { Grid } from "@mui/material";
 import ActionMenu from "../../components/common/actionMenu";
+import { getUser, isLoggedIn, logout } from "../../services/auth";
 
 const IndexPage = () => {
 
