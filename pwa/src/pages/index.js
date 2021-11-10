@@ -84,7 +84,7 @@ const IndexPage = () => {
           <br />
 
           <button class="utrecht-button" type="button">
-            <Link className="utrecht-link" to="/vault">
+            <Link className="utrecht-link" to="/data">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Mijn gegevens
               </b>
