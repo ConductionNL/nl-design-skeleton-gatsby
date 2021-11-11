@@ -5,7 +5,6 @@ import {useUrlContext} from "../../context/urlContext";
 import {navigate} from "gatsby-link";
 import {setUser} from "../../services/auth";
 import CircularProgress from "@mui/material/CircularProgress";
-import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 
 const Redirect = () => {
@@ -30,13 +29,13 @@ const Redirect = () => {
         navigate("/vault");
       })
       .catch(function(error) {
-        // navigate("/");
+        navigate("/");
       });
   }
 
-  // useEffect(() => {
-  //   handleLogin();
-  // }, []);
+  useEffect(() => {
+    handleLogin();
+  }, []);
 
   return (
     <Layout>
