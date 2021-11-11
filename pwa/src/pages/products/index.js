@@ -16,11 +16,11 @@ const IndexPage = () => {
             <ActionMenu />
           </Grid>
           <Grid item sm={9}>
-            <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Diensten', href: '/products' }]} />
+            <Breadcrumbs items={[{ name: 'Home/', href: '/' }, { name: 'Diensten' }]} />
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Diensten</h1>
-            <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
+            <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">
               Hier vind u diensten en producten waar u gebruik van kunt maken.
-            </h4>
+            </h3>
             <Grid container spacing={2}>
               <Grid item sm={4}>
                 <Card
@@ -29,6 +29,7 @@ const IndexPage = () => {
                   onClick={function noRefCheck() { }}
                   subTitle="Verhuizen, emigreren, briefadres, geheimhouding persoonsgegevens."
                   title="Verhuizen"
+                  variant="basic"
                 />
               </Grid>
 
@@ -39,6 +40,7 @@ const IndexPage = () => {
                   onClick={function noRefCheck() { }}
                   subTitle="Uittreksel burgelijke stand, basisregistratie personen, VOG."
                   title="Uittreksel en verklaringen"
+                  variant="basic"
                 />
               </Grid>
               <Grid item sm={4}>
@@ -48,6 +50,7 @@ const IndexPage = () => {
                   onClick={function noRefCheck() { }}
                   subTitle="Trouwen, geregistreerd partnerschap, scheiden."
                   title="Trouwen, partnerschap, scheiden"
+                  variant="basic"
                  />
               </Grid>
             </Grid>
