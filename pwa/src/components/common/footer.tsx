@@ -7,36 +7,20 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-
-const useStyles = makeStyles((theme) => ({
-
-  footerStyle: {
-
-  },
-  text: {},
-}));
+import {Link} from "gatsby";
 
 export default function Footer() {
 
-  const classes = useStyles();
-
-
   return (
-    <footer className="utrecht-page-footer" style={{ position: 'fixed', left: '0', bottom: '0', width: '100%' }}>
+    <footer className="utrecht-page-footer">
       <Grid container spacing={{xs: 5}}>
         <Grid item xs={12} sm={4} >
           <Box>
             <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Diensten</h3>
           </Box>
-          <Box>
-            <a href="https://nijmegen.commonground.nu/moving"
-               className="utrecht-link">Verhuizen</a>
-          </Box>
-          <a href="https://nijmegen.commonground.nu/marriage"
-             className="utrecht-link">Huwelijk</a><br/>
-          <a href="https://nijmegen.commonground.nu/certificates"
-             className="utrecht-link">Uittreksels</a>
+          <Link to={"/moving"} className="utrecht-link">Verhuizen</Link> <br/>
+          <Link to={"/marriage"} className="utrecht-link">Huwelijk</Link> <br/>
+          <Link to={"/certificates"} className="utrecht-link">Uittreksels</Link> <br/>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Box>

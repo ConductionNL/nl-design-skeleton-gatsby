@@ -8,14 +8,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 
-
-const useStyles = makeStyles((theme) => ({
-
-  IconProgresStyle: {
-    display: 'flex',  alignitems: 'center', justifycontent: 'center',
-  },
-
-}));
 const Redirect = () => {
 
   const urlContext = useUrlContext();
