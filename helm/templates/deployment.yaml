@@ -32,7 +32,7 @@ spec:
       volumes:
           - name: env
             configMap:
-                name: env
+                name: {{ include "api-platform.fullname" . }}
                 items:
                     - key: "properties"
                       path: "env.js"
