@@ -24,68 +24,68 @@ const IndexPage = () => {
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined && getUser() !== undefined && getUser() !== null ?
-              <button class="utrecht-button" type="button">
-                <Link className="utrecht-link" to="/data">
-                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '15px' }}>
+            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
+              <Link to="/data">
+                <button class="utrecht-button" type="button">
+                  <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                     MIJN GEGEVENS
                   </b>
-                </Link>
-              </button> :
-
-              <button class="utrecht-button" type="button">
-                <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+                </button>
+              </Link>
+              :
+              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+                <button class="utrecht-button" type="button">
                   <img src={DigiDImg} width='55px' height='55px' />
-                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
+                  <b className="utrecht-b" style={{textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px'}}>
                     INLOGGEN
                   </b>
-                </a>
-              </button>
+                </button>
+              </a>
         }
 
           <br/>
           <br/>
 
-          <button class="utrecht-button" type="button">
-            <Link className="utrecht-link" to="/cases">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Mijn aanvragen
-              </b>
+            <Link to="/cases">
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn aanvragen
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br/>
           <br/>
 
-          <button class="utrecht-button" type="button">
-            <Link className="utrecht-link" to="/products">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Diensten
-              </b>
+            <Link to="/products">
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Diensten
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />
 
-          <button class="utrecht-button" type="button">
-            <Link className="utrecht-link" to="/vault">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Kluis
-              </b>
+            <Link to="/vault">
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn Kluis
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />
 
-          <button class="utrecht-button" type="button">
-            <Link className="utrecht-link" to="/data">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Mijn gegevens
-              </b>
+            <Link to="/data">
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn gegevens
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />
