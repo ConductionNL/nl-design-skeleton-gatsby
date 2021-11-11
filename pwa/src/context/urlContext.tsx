@@ -5,12 +5,16 @@ const UrlContext = createContext(undefined);
 
 export function UrlContextWrapper({ children }) {
 
-  let sharedState = {
-    meUrl: (window as any).GATSBY_ME_URL ?? process.env.GATSBY_ME_URL,
-    apiUrl: (window as any).GATSBY_API_URL ?? process.env.GATSBY_API_URL,
-    baseUrl: (window as any).GATSBY_BASE_URL ?? process.env.GATSBY_BASE_URL,
-    frontendUrl: (window as any).GATSBY_FRONTEND_URL ?? process.env.GATSBY_FRONTEND_URL,
-    organization: (window as any).GATSBY_ORGANIZATION ?? process.env.GATSBY_ORGANIZATION,
+  let sharedState = {};
+
+  if (typeof window !== "undefined") {
+    sharedState = {
+      meUrl: (window as any).GATSBY_ME_URL ?? process.env.GATSBY_ME_URL,
+      apiUrl: (window as any).GATSBY_API_URL ?? process.env.GATSBY_API_URL,
+      baseUrl: (window as any).GATSBY_BASE_URL ?? process.env.GATSBY_BASE_URL,
+      frontendUrl: (window as any).GATSBY_FRONTEND_URL ?? process.env.GATSBY_FRONTEND_URL,
+      organization: (window as any).GATSBY_ORGANIZATION ?? process.env.GATSBY_ORGANIZATION,
+    }
   }
 
   return (
