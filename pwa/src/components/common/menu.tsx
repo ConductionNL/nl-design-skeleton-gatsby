@@ -46,7 +46,7 @@ export default function MainMenu() {
           <li className="utrecht-topnav__item">
             {
               isLoggedIn() &&
-              <span style={{color: 'white'}}>
+              <span className="utrecht-topnav__link">
               {
                 getUser().name
               }
@@ -57,11 +57,11 @@ export default function MainMenu() {
             {
               isLoggedIn()
                 ?
-                <span onClick={handleLogout} >Uitloggen</span>
+                <span className="utrecht-topnav__link" onClick={handleLogout} >Uitloggen</span>
                 :
-                <a
+                <a className="utrecht-topnav__link"
                   href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
-                  <span style={{color: 'white'}}>Inloggen</span>
+                  Inloggen
                 </a>
             }
           </li>
