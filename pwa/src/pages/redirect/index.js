@@ -6,12 +6,12 @@ import {navigate} from "gatsby-link";
 import {setUser} from "../../services/auth";
 import CircularProgress from "@mui/material/CircularProgress";
 import makeStyles from '@mui/styles/makeStyles';
-
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
 
   IconProgresStyle: {
-    display: 'flex',  alignitems: 'center', justifycontent: 'center',
+     alignitems: 'center', justifycontent: 'center',
   },
 
 }));
@@ -22,21 +22,20 @@ const Redirect = () => {
   const handleLogin = () => {
     fetch(urlContext.meUrl, {
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
     })
-      .then(function(response) {
-        if(response.ok)
-        {
+      .then(function (response) {
+        if (response.ok) {
           return response.json();
         }
 
         throw new Error('Something went wrong.');
       })
-      .then(function(data) {
+      .then(function (data) {
         setUser(data);
         navigate("/vault");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         // navigate("/");
       });
   }
@@ -48,9 +47,11 @@ const Redirect = () => {
   return (
     <Layout>
       <main>
-        <div  className={handleLogin.IconProgresStyle}>
-          < CircularProgress disableShrink />
-        </div>
+        <Typography align={"center"}>
+          <p className="utrecht-paragraph">
+            <CircularProgress/> <br/> even geduld alstublieft
+          </p>
+        </Typography>
       </main>
     </Layout>
 
