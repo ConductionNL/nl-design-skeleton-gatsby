@@ -4,6 +4,7 @@ import {useUserContext} from "../../context/userContext";
 import {useUrlContext} from "../../context/urlContext";
 import {getUser, isLoggedIn, logout} from "../../services/auth";
 import {navigate} from "gatsby-link";
+import {useEffect} from "react";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,

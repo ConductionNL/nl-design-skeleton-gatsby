@@ -8,6 +8,12 @@ import { getUser, isLoggedIn, logout } from "../services/auth";
 
 const IndexPage = () => {
   const context = useUrlContext();
+
+  React.useEffect(() => {
+    console.log(context.apiUrl);
+    console.log(context.meUrl);
+  }, []);
+
   return (
       <Layout>
         <main>
