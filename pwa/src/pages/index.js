@@ -10,9 +10,8 @@ const IndexPage = () => {
   const context = useUrlContext();
 
   React.useEffect(() => {
-    console.log(process.env.GATSBY_API_URL);
     console.log(context.apiUrl);
-    console.log(window.GATSBY_API_URL);
+    console.log(context.meUrl);
   }, []);
 
   return (

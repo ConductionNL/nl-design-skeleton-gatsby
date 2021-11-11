@@ -10,7 +10,6 @@ export const wrapRootElement = ({ element }) => (
       <UrlContextWrapper>
         {element}
         <Helmet>
-          <script src="/env.js" />
           <script src="https://unpkg.com/@nl-design-system-unstable/theme-switcher" />
         </Helmet>
       </UrlContextWrapper>
