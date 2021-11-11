@@ -23,7 +23,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="utrecht-page-footer" style={{ position: 'fixed', left: '0', bottom: '0', width: '100%' }}>
+    <footer className="utrecht-page-footer">
       <Grid container spacing={{xs: 5}}>
         <Grid item xs={12} sm={4} >
           <Box>
