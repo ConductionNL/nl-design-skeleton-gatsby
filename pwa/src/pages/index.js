@@ -24,7 +24,7 @@ const IndexPage = () => {
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
+            isLoggedIn() ?
               <Link to="/data">
                 <button class="utrecht-button" type="button">
                   <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
@@ -33,7 +33,7 @@ const IndexPage = () => {
                 </button>
               </Link>
               :
-              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
                 <button class="utrecht-button" type="button">
                   <img src={DigiDImg} width='55px' height='55px' />
                   <b className="utrecht-b" style={{textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px'}}>
