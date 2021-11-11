@@ -6,6 +6,7 @@ import {navigate} from "gatsby-link";
 import {setUser} from "../../services/auth";
 import CircularProgress from "@mui/material/CircularProgress";
 import makeStyles from '@mui/styles/makeStyles';
+import Grid from '@mui/material/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,9 +49,23 @@ const Redirect = () => {
   return (
     <Layout>
       <main>
-        <div  className={handleLogin.IconProgresStyle}>
-          < CircularProgress disableShrink />
-        </div>
+        <Grid container spacing={2} sx={{textAlign: "center", marginBottom: '200px', marginTop: '100px'}}>
+          <Grid item xs={12}>
+            <h1 className="utrecht-heading-1">
+              Aan het inloggen
+            </h1>
+          </Grid>
+          <Grid item xs={12}>
+            <h4 className="utrecht-heading-4">
+                even geduld alstublieft..
+            </h4>
+          </Grid>
+          <Grid item xs={12}>
+            <div>
+              <CircularProgress size={80} />
+            </div>
+          </Grid>
+        </Grid>
       </main>
     </Layout>
 
