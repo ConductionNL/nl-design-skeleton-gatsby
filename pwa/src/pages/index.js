@@ -4,14 +4,10 @@ import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import DigiDImg from "../images/digid_button.svg";
 import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
-import { useUserContext } from "../context/userContext";
+import { getUser, isLoggedIn, logout } from "../services/auth";
 
 const IndexPage = () => {
   const context = useUrlContext();
-  let userContext = useUserContext();
-
-  console.log(userContext);
-
   return (
       <Layout>
         <main>
@@ -28,7 +24,7 @@ const IndexPage = () => {
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
+            isLoggedIn() ?
               <Link to="/data">
                 <button class="utrecht-button" type="button">
                   <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
@@ -37,7 +33,7 @@ const IndexPage = () => {
                 </button>
               </Link>
               :
-              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
+              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
                 <button class="utrecht-button" type="button">
                   <img src={DigiDImg} width='55px' height='55px' />
                   <b className="utrecht-b" style={{textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px'}}>
