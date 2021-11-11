@@ -3,8 +3,34 @@ import Layout from "../../components/common/layout";
 import Breadcrumbs from "../../components/common/breadcrumbs";
 import { Grid } from "@mui/material";
 import ActionMenu from "../../components/common/actionMenu";
+import { documentDownload } from "../../components/utility/DocumentDownload";
+import { useEffect } from 'react';
+import { getUser, isLoggedIn, logout } from "../../services/auth";
+import { navigate } from "gatsby-link";
+import { useUrlContext } from "../../context/urlContext";
 
 function Index() {
+
+  const context = useUrlContext();
+
+  const [claims, setClaims] = React.useState(null);
+
+  useEffect(() => {
+    if (getUser() !== undefined && getUser() !== null) {
+      fetch(context.apiUrl + "/gateways/waardepapieren-register/certificates?person=" + getUser().bsn, {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+        .then(response => response.json())
+        .then((data) => {
+          setClaims(data['hydra:member']);
+          console.log('Certs:')
+          console.log(data)
+        });
+    }
+      }, []);
 
   return <>
     <Layout>
@@ -27,12 +53,23 @@ function Index() {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Akte van geboorte</td>
-                  <td>9-11-2021</td>
-                  <td>DOWNLOAD BUTTON</td>
-                  <td>QR CODE</td>
-                </tr>
+                  {
+                    claims !== null ?
+                    claims.map((row) => (
+                    <tr>
+                      <td>{row.name}</td>
+                      <td>{row.dateCreated}</td>
+                        <td>{documentDownload(row.document, row.name, ".pdf")}</td>
+                      <td>QR CODE</td>
+                      </tr>
+                    )) :
+                    <tr>
+                        <td>No results found</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                  }
                 </tbody>
               </table>
             </div>

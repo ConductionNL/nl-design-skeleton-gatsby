@@ -4,14 +4,10 @@ import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import DigiDImg from "../images/digid_button.svg";
 import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
-import { useUserContext } from "../context/userContext";
+import { getUser, isLoggedIn, logout } from "../services/auth";
 
 const IndexPage = () => {
   const context = useUrlContext();
-  let userContext = useUserContext();
-
-  console.log(userContext);
-
   return (
       <Layout>
         <main>
@@ -28,9 +24,9 @@ const IndexPage = () => {
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
+            context.baseUrl !== null && context.baseUrl != undefined && getUser() !== undefined && getUser() !== null ?
               <button class="utrecht-button" type="button">
-                <Link to="/data">
+                <Link className="utrecht-link" to="/data">
                   <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '15px' }}>
                     MIJN GEGEVENS
                   </b>
@@ -38,7 +34,7 @@ const IndexPage = () => {
               </button> :
 
               <button class="utrecht-button" type="button">
-                <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
+                <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "?state=8412312632"}>
                   <img src={DigiDImg} width='55px' height='55px' />
                   <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
                     INLOGGEN
@@ -51,7 +47,7 @@ const IndexPage = () => {
           <br/>
 
           <button class="utrecht-button" type="button">
-            <Link to="/cases">
+            <Link className="utrecht-link" to="/cases">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Mijn aanvragen
               </b>
@@ -62,7 +58,7 @@ const IndexPage = () => {
           <br/>
 
           <button class="utrecht-button" type="button">
-            <Link to="/products">
+            <Link className="utrecht-link" to="/products">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Diensten
               </b>
@@ -73,7 +69,7 @@ const IndexPage = () => {
           <br />
 
           <button class="utrecht-button" type="button">
-            <Link to="/vault">
+            <Link className="utrecht-link" to="/vault">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Kluis
               </b>
@@ -84,7 +80,7 @@ const IndexPage = () => {
           <br />
 
           <button class="utrecht-button" type="button">
-            <Link to="/vault">
+            <Link className="utrecht-link" to="/data">
               <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                 Mijn gegevens
               </b>
