@@ -14,12 +14,10 @@ const IndexPage = () => {
             <ActionMenu />
           </Grid>
           <Grid item sm={9}>
-        <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Mijn aanvragen', href: '/cases' }]} />
+            <Breadcrumbs items={[{ name: 'Home/', href: '/' }, { name: 'Mijn aanvragen' }]} />
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Mijn aanvragen</h1>
             <h4 className="utrecht-heading-4 utrecht-heading-4--distanced">
-              Hier vind u uw bestaande aanvragen voor verschillende zaken.
-        </h4>
-
+              Hier vind u uw bestaande aanvragen voor verschillende zaken.</h4>
         <div class="utrecht-html">
           <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." style={{ width: "100%" }}>
             <caption>Hier kunnen we een caption neerzetten</caption>
@@ -28,6 +26,7 @@ const IndexPage = () => {
                 <th scope="col">Type</th>
                 <th scope="col" class="numeric">Status</th>
                 <th scope="col" class="numeric">Startdatum</th>
+                <th scope="col" class="text"> </th>
               </tr>
             </thead>
             <tbody>
@@ -35,6 +34,7 @@ const IndexPage = () => {
                 <td>Huwelijk</td>
                 <td class="numeric">Pending</td>
                 <td class="numeric">8-11-2021</td>
+                <td><a className="utrecht-link utrecht-link--hover" href="#">Bekijken</a></td>
               </tr>
             </tbody>
           </table>

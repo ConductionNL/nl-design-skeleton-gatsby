@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { getUser, isLoggedIn, logout } from "../../services/auth";
 import { navigate } from "gatsby-link";
 import { useUrlContext } from "../../context/urlContext";
+import {Link} from "gatsby";
 
 function Index() {
 
@@ -40,7 +41,7 @@ function Index() {
             <ActionMenu />
           </Grid>
           <Grid item sm={9}>
-            <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Mijn kluis', href: '/vault' } ]} />
+            <Breadcrumbs items={[{ name: 'Home/', href: '/' }, { name: 'Mijn kluis' }]} />
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Mijn kluis</h1>
             <div className="utrecht-html">
               <table lang="nl" summary="Overzicht van de stemmen voor en tegen het betaald parkeren." style={{width: "100%"}}>
