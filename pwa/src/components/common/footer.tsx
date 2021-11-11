@@ -3,7 +3,7 @@ import * as React from "react";
 import {ThemeSwitcher} from "../theme-switcher/theme-switcher";
 import {Grid} from "@mui/material";
 import CallIcon from '@mui/icons-material/Call';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -50,7 +50,7 @@ export default function Footer() {
             <a href="tel:14024" className="utrecht-link utrecht-link--telephone">14024</a>
           </Box>
           <Box>
-            <MailOutlineIcon/>
+            <EmailIcon/>
             <a href="mailto:gemeente@nijmegen.nl"
                className="utrecht-link utrecht-link--telephone">ifo@demodam.nl</a>
           </Box>
