@@ -4,14 +4,10 @@ import Layout from "../components/common/layout";
 import {useUrlContext} from "../context/urlContext";
 import DigiDImg from "../images/digid_button.svg";
 import { UtrechtHeading1 } from "@utrecht/web-component-library-react";
-import { useUserContext } from "../context/userContext";
+import { getUser, isLoggedIn, logout } from "../services/auth";
 
 const IndexPage = () => {
   const context = useUrlContext();
-  let userContext = useUserContext();
-
-  console.log(userContext);
-
   return (
       <Layout>
         <main>
@@ -28,68 +24,68 @@ const IndexPage = () => {
           </p>
 
           {
-            context.baseUrl !== null && context.baseUrl != undefined && userContext.user !== undefined && userContext.user !== null ?
-              <button class="utrecht-button" type="button">
-                <Link to="/data">
-                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '15px' }}>
+            isLoggedIn() ?
+              <Link to="/data">
+                <button class="utrecht-button" type="button">
+                  <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
                     MIJN GEGEVENS
                   </b>
-                </Link>
-              </button> :
-
-              <button class="utrecht-button" type="button">
-                <a href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
+                </button>
+              </Link>
+              :
+              <a className="utrecht-link" href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>
+                <button class="utrecht-button" type="button">
                   <img src={DigiDImg} width='55px' height='55px' />
-                  <b class="utrecht-b" style={{ textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px' }}>
+                  <b className="utrecht-b" style={{textAlign: 'center', verticalAlign: 'middle', paddingLeft: '45px'}}>
                     INLOGGEN
                   </b>
-                </a>
-              </button>
+                </button>
+              </a>
         }
 
           <br/>
           <br/>
 
-          <button class="utrecht-button" type="button">
             <Link to="/cases">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Mijn aanvragen
-              </b>
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn aanvragen
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br/>
           <br/>
 
-          <button class="utrecht-button" type="button">
             <Link to="/products">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Diensten
-              </b>
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Diensten
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />
 
-          <button class="utrecht-button" type="button">
             <Link to="/vault">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Kluis
-              </b>
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn Kluis
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />
 
-          <button class="utrecht-button" type="button">
-            <Link to="/vault">
-              <b class="utrecht-b" style={{ verticalAlign: 'middle' }}>
-                Mijn gegevens
-              </b>
+            <Link to="/data">
+              <button class="utrecht-button" type="button">
+                <b className="utrecht-b" style={{verticalAlign: 'middle'}}>
+                  Mijn gegevens
+                </b>
+              </button>
             </Link>
-          </button>
 
           <br />
           <br />

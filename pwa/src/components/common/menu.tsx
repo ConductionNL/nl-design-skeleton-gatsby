@@ -1,10 +1,5 @@
 import makeStyles from '@mui/styles/makeStyles';
-import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import {Stack} from "@mui/material";
 import * as React from "react";
-import {useEffect} from "react";
 import {useUserContext} from "../../context/userContext";
 import {useUrlContext} from "../../context/urlContext";
 import {getUser, isLoggedIn, logout} from "../../services/auth";
@@ -61,7 +56,7 @@ export default function MainMenu() {
             {
               isLoggedIn()
                 ?
-                <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
+                <span onClick={handleLogout} >Uitloggen</span>
                 :
                 <a
                   href={context.baseUrl + "/digid/login?returnUrl=" + context.frontendUrl + "/redirect"}>

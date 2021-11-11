@@ -11,7 +11,9 @@ import Typography from '@mui/material/Typography';
 
 const useStyles = makeStyles((theme) => ({
 
-  footerStyle: {},
+  footerStyle: {
+
+  },
   text: {},
 }));
 
@@ -21,11 +23,11 @@ export default function Footer() {
 
 
   return (
-    <footer className="utrecht-page-footer">
+    <footer className="utrecht-page-footer" style={{ position: 'fixed', left: '0', bottom: '0', width: '100%' }}>
       <Grid container spacing={{xs: 5}}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4} >
           <Box>
-            <h5 className="utrecht-heading-3 utrecht-heading-3--distanced">Diensten</h5>
+            <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Diensten</h3>
           </Box>
           <Box>
             <a href="https://nijmegen.commonground.nu/moving"
@@ -38,7 +40,7 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Box>
-            <Typography variant="h5"  className="utrecht-heading-3 utrecht-heading-3--distanced">Contact</Typography>
+            <Typography variant="h3"  className="utrecht-heading-3 utrecht-heading-3--distanced">Contact</Typography>
           </Box>
           <Box>
             <LocationOnIcon/>
@@ -55,7 +57,7 @@ export default function Footer() {
         </Grid>
        <Grid item xs={4}>
           <div>
-            <h5 className="utrecht-heading-3 utrecht-heading-3--distanced">Openingstijden</h5>
+            <h3 className="utrecht-heading-3 utrecht-heading-3--distanced">Openingstijden</h3>
             <p className="utrecht-paragraph utrecht-paragraph--distanced">
               <strong>Maandag - woensdag: 9.00 - 17.00</strong><br/>
               <strong>Donderdag: 9.00 - 20.00</strong><br/>
