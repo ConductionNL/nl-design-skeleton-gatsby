@@ -26,7 +26,7 @@ const Redirect = () => {
       })
       .then(function(data) {
         setUser(data);
-        navigate("/vault");
+        navigate("/" + urlContext.loginRedirect);
       })
       .catch(function(error) {
         navigate("/");

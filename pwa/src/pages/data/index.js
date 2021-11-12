@@ -12,13 +12,11 @@ import { getUser, isLoggedIn, logout } from "../../services/auth";
 function Index() {
   let context = useUrlContext();
 
-  const [user, setUser] = useState(null);
-
-  console.log(getUser());
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (getUser() !== null) {
+      if (isLoggedIn()) {
         getPerson();
         //getDossiers();
       }
@@ -26,30 +24,28 @@ function Index() {
   }, []);
 
   const getPerson = () => {
-    fetch(context.apiUrl + "/gateways/brp/ingeschrevenpersonen/" + getUser().email + "?expand=ouders,kinderen", {
+    fetch(context.apiUrl + "/gateways/brp/ingeschrevenpersonen/" + getUser().username + "?expand=ouders,kinderen", {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
     })
       .then(response => response.json())
       .then((data) => {
-        console.log("Data: ");
-        console.log(data.verblijfplaats);
         if (data.error !== undefined && data.error.status !== undefined && data.error.status == 404) {
           getPersonWithoutExpand();
         } else {
-          setUser(data);
+          setData(data);
         }
       });
   }
 
   const getPersonWithoutExpand = () => {
-    fetch(context.apiUrl + "/gateways/brp/ingeschrevenpersonen/" + getUser().email, {
+    fetch(context.apiUrl + "/gateways/brp/ingeschrevenpersonen/" + getUser().username, {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
     })
       .then(response => response.json())
       .then((data) => {
-        setUser(data);
+        setData(data);
       });
   }
 
@@ -67,7 +63,7 @@ function Index() {
             <br /><br />
 
             {
-              user !== undefined && user !== null &&
+              data !== null &&
               <><Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                  <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Persoonlijke gegevens</h3>
@@ -75,16 +71,16 @@ function Index() {
                 <AccordionDetails>
                   <div style={{ width: "100% !important" }}>
                     {
-                      user !== null && user.naam !== undefined && user.naam.voornamen &&
-                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>Voornamen: <span style={{ textAlign: "right", float: "right" }}>{user.naam.voornamen}</span></h5>
+                      data.naam !== undefined &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }}>Voornamen: <span style={{ textAlign: "right", float: "right" }}>{data.naam.voornamen}</span></h5>
                     }
                     {
-                      user !== null && user.naam !== undefined && user.naam.geslachtsnaam &&
-                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{user.naam.geslachtsnaam}</span></h5>
+                      data.naam !== undefined &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Achternaam: <span style={{ textAlign: "right", float: "right" }}>{data.naam.geslachtsnaam}</span></h5>
                     }
                     {
-                      user !== null && user !== undefined && user.geslachtsaanduiding !== undefined &&
-                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{user.geslachtsaanduiding}</span></h5>
+                      data.geslachtsaanduiding !== undefined &&
+                      <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Geslacht: <span style={{ textAlign: "right", float: "right" }}>{data.geslachtsaanduiding}</span></h5>
                     }
                   </div>
                 </AccordionDetails>
@@ -94,7 +90,7 @@ function Index() {
             }
 
             {
-              user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].kinderen !== undefined && user['_embedded'].kinderen !== null &&
+              data !== null && data['_embedded'] !== undefined && data['_embedded'] !== null && data['_embedded'].kinderen !== undefined && data['_embedded'].kinderen !== null &&
               <><Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                  <h3 className="utrecht-heading-3 utrecht-heading-3--distanced" >Kinderen</h3>
@@ -102,7 +98,7 @@ function Index() {
                 <AccordionDetails>
                   <div style={{ width: "100% !important" }}>
                     {
-                      user['_embedded'].kinderen.map((row) => (
+                      data['_embedded'].kinderen.map((row) => (
                         <>
                           {
                             row.naam.voornamen !== undefined && row.naam.voornamen !== null &&
@@ -129,7 +125,7 @@ function Index() {
             }
 
             {
-              user !== null && user['_embedded'] !== undefined && user['_embedded'] !== null && user['_embedded'].ouders !== undefined && user['_embedded'].ouders !== null &&
+              data !== null && data['_embedded'] !== undefined && data['_embedded'] !== null && data['_embedded'].ouders !== undefined && data['_embedded'].ouders !== null &&
               <>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -138,7 +134,7 @@ function Index() {
                   <AccordionDetails>
                     <div style={{ width: "100% !important" }}>
                       {
-                        user['_embedded'].ouders.map((row) => (
+                        data['_embedded'].ouders.map((row) => (
                           <>
                             {
                               row.naam.voornamen !== undefined && row.naam.voornamen !== null &&
@@ -165,7 +161,7 @@ function Index() {
             }
 
             {
-              user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null &&
+              data !== null && data.verblijfplaats !== undefined && data.verblijfplaats !== null &&
               <>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -174,16 +170,16 @@ function Index() {
                   <AccordionDetails>
                     <div style={{ width: "100% !important" }}>
                       {
-                        user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.adresregel1 !== undefined && user.verblijfplaats.adresregel1 !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Straat: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.adresregel1}</span></h5>
+                        data.verblijfplaats.adresregel1 !== undefined && data.verblijfplaats.adresregel1 !== null &&
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Straat: <span style={{ textAlign: "right", float: "right" }}>{data.verblijfplaats.adresregel1}</span></h5>
                       }
                       {
-                        user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.woonplaats !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Plaats: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.woonplaats}</span></h5>
+                        data.verblijfplaats.woonplaats !== null &&
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Plaats: <span style={{ textAlign: "right", float: "right" }}>{data.verblijfplaats.woonplaats}</span></h5>
                       }
                       {
-                        user !== null && user.verblijfplaats !== undefined && user.verblijfplaats !== null && user.verblijfplaats.datumAanvangAdreshouding !== null &&
-                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Vanaf: <span style={{ textAlign: "right", float: "right" }}>{user.verblijfplaats.datumAanvangAdreshouding.datum}</span></h5>
+                        data.verblijfplaats.datumAanvangAdreshouding !== null &&
+                        <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Vanaf: <span style={{ textAlign: "right", float: "right" }}>{data.verblijfplaats.datumAanvangAdreshouding.datum}</span></h5>
                       }
                       <h5 className="utrecht-heading-5 utrecht-heading-5--distanced" style={{ width: "100%" }} >Aantal bewoners: <span style={{ textAlign: "right", float: "right" }}>3</span></h5>
                     </div>
