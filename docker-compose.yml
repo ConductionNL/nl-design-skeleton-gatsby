@@ -10,6 +10,14 @@ services:
 #    ports:
 #      - "81:80"
   
+  gateway-frontend:
+    &gateway-frontend
+    image: ghcr.io/conductionnl/commonground-gateway-frontend:dev
+    depends_on:
+      - php
+    ports:
+      - "83:80"
+  
   php:
     &php
     image: ghcr.io/conductionnl/commonground-gateway-php:dev
