@@ -1,12 +1,10 @@
 import * as React from "react"
 import Layout from "../../components/common/layout";
 import Breadcrumbs from "../../components/common/breadcrumbs";
-import { Grid } from "@mui/material";
 import ActionMenu from "../../components/common/actionMenu";
 import { documentDownload } from "../../components/utility/DocumentDownload";
 import { useEffect } from 'react';
-import { getUser, isLoggedIn, logout } from "../../services/auth";
-import { navigate } from "gatsby-link";
+import { getUser } from "../../services/auth";
 import { useUrlContext } from "../../context/urlContext";
 
 function Index() {
@@ -35,11 +33,11 @@ function Index() {
   return <>
     <Layout>
       <main>
-        <Grid container>
-          <Grid item sm={3}>
+        <div className="row">
+          <div className="col-12 col-sm-3">
             <ActionMenu />
-          </Grid>
-          <Grid item sm={9}>
+          </div>
+          <div className="col-12 col-sm-9">
             <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Mijn kluis', href: '/vault' } ]} />
             <h1 className="utrecht-heading-1 utrecht-heading-1--distanced">Mijn kluis</h1>
             <div className="utrecht-html">
@@ -53,28 +51,28 @@ function Index() {
                 </tr>
                 </thead>
                 <tbody>
-                  {
-                    claims !== null ?
+                {
+                  claims !== null ?
                     claims.map((row) => (
-                    <tr>
-                      <td>{row.name}</td>
-                      <td>{row.dateCreated}</td>
+                      <tr>
+                        <td>{row.name}</td>
+                        <td>{row.dateCreated}</td>
                         <td>{documentDownload(row.document, row.name, ".pdf")}</td>
-                      <td>QR CODE</td>
+                        <td>QR CODE</td>
                       </tr>
                     )) :
                     <tr>
-                        <td>No results found</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                      <td>No results found</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
-                  }
+                }
                 </tbody>
               </table>
             </div>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </main>
     </Layout>
   </>
