@@ -15,6 +15,7 @@ export function UrlContextWrapper({ children }) {
       frontendUrl: (window as any).GATSBY_FRONTEND_URL ?? process.env.GATSBY_FRONTEND_URL,
       organization: (window as any).GATSBY_ORGANIZATION ?? process.env.GATSBY_ORGANIZATION,
       loginRedirect: (window as any).GATSBY_LOGIN_REDIRECT ?? process.env.GATSBY_LOGIN_REDIRECT,
+      defaultTheme: (window as any).GATSBY_DEFAULT_THEME ?? process.env.GATSBY_DEFAULT_THEME,
     }
   }
 
