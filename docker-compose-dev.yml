@@ -19,6 +19,14 @@ services:
     ports:
       - "82:80"
 
+  gateway-frontend:
+    &gateway-frontend
+    image: ghcr.io/conductionnl/commonground-gateway-frontend:dev
+    depends_on:
+      - php
+    ports:
+      - "83:80"
+
   api:
     &nginx
     image: ghcr.io/conductionnl/commonground-gateway-nginx:latest
