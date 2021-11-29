@@ -130,6 +130,12 @@
       "jsx-a11y/anchor-is-valid": "off",
       "jsx-a11y/no-static-element-interactions": "off",
       "@typescript-eslint/ban-ts-comment": "off",
-      "jsx-a11y/html-has-lang": "off"
+      "jsx-a11y/html-has-lang": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
     }
   }
