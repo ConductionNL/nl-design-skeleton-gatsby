@@ -1,46 +1,31 @@
-import {createContext, useContext} from 'react';
+import { createContext, useContext } from "react";
 import * as React from "react";
 
-const UrlContext = createContext(undefined);
+const UrlContext = createContext({});
 
 export function UrlContextWrapper({ children }) {
-
   let sharedState = {};
-  let meUrl;
-  let apiUrl;
-  let baseUrl;
-  let frontendUrl;
-  let organization;
 
-  if (typeof window !== 'undefined') {
-    if (window.location.href.includes('http://localhost')) {
-      meUrl = 'http://localhost/me';
-      apiUrl = 'http://localhost/api';
-      baseUrl = 'http://localhost';
-      frontendUrl = 'http://localhost:8000';
-      organization = 'http://webresourcecatalogus.conduction.svc.cluster.local/organizations/b2d3176e-f1c6-4365-ab86-dd253c65fc43';
-    } else {
-      meUrl = 'https://verhuizen.accp.s-hertogenbosch.nl/api/users/me';
-      apiUrl = 'https://verhuizen.accp.s-hertogenbosch.nl/api';
-      baseUrl = 'https://verhuizen.accp.s-hertogenbosch.nl';
-      frontendUrl = 'https://verhuizen.accp.s-hertogenbosch.nl';
-      organization = 'http://webresourcecatalogus.verhuizen.svc.cluster.local/organizations/4f387d0e-a2e5-44c0-9902-c31b63a8ee36';
-    }
+  if (typeof window !== "undefined") {
+    sharedState = {
+      meUrl: (window as any).GATSBY_ME_URL ?? process.env.GATSBY_ME_URL,
+      apiUrl: (window as any).GATSBY_API_URL ?? process.env.GATSBY_API_URL,
+      baseUrl: (window as any).GATSBY_BASE_URL ?? process.env.GATSBY_BASE_URL,
+      frontendUrl:
+        (window as any).GATSBY_FRONTEND_URL ?? process.env.GATSBY_FRONTEND_URL,
+      organization:
+        (window as any).GATSBY_ORGANIZATION ?? process.env.GATSBY_ORGANIZATION,
+      loginRedirect:
+        (window as any).GATSBY_LOGIN_REDIRECT ??
+        process.env.GATSBY_LOGIN_REDIRECT,
+      defaultTheme:
+        (window as any).GATSBY_DEFAULT_THEME ??
+        process.env.GATSBY_DEFAULT_THEME,
+    };
   }
-
-  sharedState = {
-    meUrl: meUrl,
-    apiUrl: apiUrl,
-    baseUrl: baseUrl,
-    frontendUrl: frontendUrl,
-    organization: organization,
-  }
-
 
   return (
-    <UrlContext.Provider value={sharedState}>
-      {children}
-    </UrlContext.Provider>
+    <UrlContext.Provider value={sharedState}>{children}</UrlContext.Provider>
   );
 }
 

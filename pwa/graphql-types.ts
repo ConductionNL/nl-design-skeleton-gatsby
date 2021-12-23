@@ -303,6 +303,10 @@ export type SitePlugin = Node & {
 
 export type SitePluginPluginOptions = {
   pathToEmotionCacheProps?: Maybe<Scalars['String']>;
+  disableOnDev?: Maybe<Scalars['Boolean']>;
+  mergeScriptHashes?: Maybe<Scalars['Boolean']>;
+  mergeStyleHashes?: Maybe<Scalars['Boolean']>;
+  directives?: Maybe<SitePluginPluginOptionsDirectives>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
@@ -310,12 +314,17 @@ export type SitePluginPluginOptions = {
   jsxPragma?: Maybe<Scalars['String']>;
 };
 
+export type SitePluginPluginOptionsDirectives = {
+  script_src?: Maybe<Scalars['String']>;
+  style_src?: Maybe<Scalars['String']>;
+  img_src?: Maybe<Scalars['String']>;
+};
+
 export type SitePluginPackageJson = {
   name?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['String']>;
   main?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
   dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
   devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
@@ -1581,6 +1590,10 @@ export type SitePluginFilterInput = {
 
 export type SitePluginPluginOptionsFilterInput = {
   pathToEmotionCacheProps?: Maybe<StringQueryOperatorInput>;
+  disableOnDev?: Maybe<BooleanQueryOperatorInput>;
+  mergeScriptHashes?: Maybe<BooleanQueryOperatorInput>;
+  mergeStyleHashes?: Maybe<BooleanQueryOperatorInput>;
+  directives?: Maybe<SitePluginPluginOptionsDirectivesFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
@@ -1588,12 +1601,17 @@ export type SitePluginPluginOptionsFilterInput = {
   jsxPragma?: Maybe<StringQueryOperatorInput>;
 };
 
+export type SitePluginPluginOptionsDirectivesFilterInput = {
+  script_src?: Maybe<StringQueryOperatorInput>;
+  style_src?: Maybe<StringQueryOperatorInput>;
+  img_src?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginPackageJsonFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<StringQueryOperatorInput>;
   main?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
   license?: Maybe<StringQueryOperatorInput>;
   dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
   devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
@@ -1774,6 +1792,12 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___ssrAPIs'
   | 'pluginCreator___pluginFilepath'
   | 'pluginCreator___pluginOptions___pathToEmotionCacheProps'
+  | 'pluginCreator___pluginOptions___disableOnDev'
+  | 'pluginCreator___pluginOptions___mergeScriptHashes'
+  | 'pluginCreator___pluginOptions___mergeStyleHashes'
+  | 'pluginCreator___pluginOptions___directives___script_src'
+  | 'pluginCreator___pluginOptions___directives___style_src'
+  | 'pluginCreator___pluginOptions___directives___img_src'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___allExtensions'
@@ -1783,7 +1807,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___description'
   | 'pluginCreator___packageJson___version'
   | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___author'
   | 'pluginCreator___packageJson___license'
   | 'pluginCreator___packageJson___dependencies'
   | 'pluginCreator___packageJson___dependencies___name'
@@ -1950,6 +1973,12 @@ export type SitePluginFieldsEnum =
   | 'ssrAPIs'
   | 'pluginFilepath'
   | 'pluginOptions___pathToEmotionCacheProps'
+  | 'pluginOptions___disableOnDev'
+  | 'pluginOptions___mergeScriptHashes'
+  | 'pluginOptions___mergeStyleHashes'
+  | 'pluginOptions___directives___script_src'
+  | 'pluginOptions___directives___style_src'
+  | 'pluginOptions___directives___img_src'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'pluginOptions___allExtensions'
@@ -1959,7 +1988,6 @@ export type SitePluginFieldsEnum =
   | 'packageJson___description'
   | 'packageJson___version'
   | 'packageJson___main'
-  | 'packageJson___author'
   | 'packageJson___license'
   | 'packageJson___dependencies'
   | 'packageJson___dependencies___name'

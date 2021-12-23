@@ -10,3 +10,10 @@ data:
   {{- else }}
   gateway-location: {{ .Values.gateway.location }}
   {{- end }}
+  properties: |-
+    window.GATSBY_API_URL= "{{ .Values.pwa.apiUrl }}"
+    window.GATSBY_ME_URL= "{{ .Values.pwa.meUrl }}"
+    window.GATSBY_BASE_URL= "{{ .Values.pwa.baseUrl }}"
+    window.GATSBY_FRONTEND_URL= "{{ .Values.pwa.frontendUrl }}"
+    window.GATSBY_ORGANIZATION= "{{ .Values.pwa.organization }}"
+    window.GATSBY_REDIRECT_URL= "{{ .Values.pwa.redirectUrl }}"

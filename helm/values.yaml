@@ -3,10 +3,16 @@
 # Declare variables to be passed into your templates.
 pwa:
   image:
-    image: "ghcr.io/conductionnl/proto-pwa"
+    image: "ghcr.io/conductionnl/proto-pwa-gatsby   "
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: "dev"
+  apiUrl: "apiURLtest"
+  meUrl: ""
+  baseUrl: ""
+  frontendUrl: ""
+  organization: ""
+  redirectUrl: "vault"
     
 gateway: 
   enabled: true
@@ -45,7 +51,7 @@ service:
 
 ingress:
   enabled: false
-  hostname: localhost
+  hostname: placeholder
   path: ''
   pathType: ImplementationSpecific
   className: nginx
