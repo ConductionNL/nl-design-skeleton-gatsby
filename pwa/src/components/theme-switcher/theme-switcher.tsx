@@ -31,29 +31,26 @@ const ThemeSwitcher = () => {
         <nl-theme-switcher // @ts-ignore
           target=".utrecht-document"
           themes={JSON.stringify([
-            {
-              className: "demodam-theme",
-              title: "Demodam",
-              href: "https://unpkg.com/@conductionnl/demodam-design-tokens/src/index.css",
-            },
-            {
-              className: "amsterdam-theme",
-              title: "0363",
-              href: "https://unpkg.com/@nl-design-system-unstable/amsterdam-design-tokens/dist/index.css",
-            },
+
+
             {
               className: "almere-theme",
               title: "Almere",
               href: "https://unpkg.com/@conductionnl/almere-design-tokens/dist/index.css",
             },
             {
+              className: "amsterdam-theme",
+              title: "Amsterdam",
+              href: "https://unpkg.com/@nl-design-system-unstable/amsterdam-design-tokens/dist/index.css",
+            },
+            {
               className: "bodegraven-theme",
-              title: "1901",
+              title: "Bodegraven",
               href: "https://unpkg.com/@nl-design-system-unstable/bodegraven-design-tokens/dist/index.css",
             },
             {
               className: "borne-theme",
-              title: "0147",
+              title: "Borne",
               href: "https://unpkg.com/@nl-design-system-unstable/borne-design-tokens/dist/index.css",
             },
             {
@@ -62,18 +59,23 @@ const ThemeSwitcher = () => {
               href: "https://unpkg.com/@conductionnl/conduction-design-tokens/dist/index.css",
             },
             {
+              className: "demodam-theme",
+              title: "Demodam",
+              href: "https://unpkg.com/@conductionnl/demodam-design-tokens/src/index.css",
+            },
+            {
               className: "denbosch-theme",
               title: "Den Bosch",
               href: "https://unpkg.com/@conductionnl/denbosch-design-tokens/dist/index.css",
             },
             {
               className: "drechterland-theme",
-              title: "0498",
+              title: "Drechterland",
               href: "https://unpkg.com/@nl-design-system-unstable/drechterland-design-tokens/dist/index.css",
             },
             {
               className: "duiven-theme",
-              title: "0226",
+              title: "Duiven",
               href: "https://unpkg.com/@nl-design-system-unstable/duiven-design-tokens/dist/index.css",
             },
             {
@@ -83,32 +85,37 @@ const ThemeSwitcher = () => {
             },
             {
               className: "enkhuizen-theme",
-              title: "0388",
+              title: "Enkhuizen",
               href: "https://unpkg.com/@nl-design-system-unstable/enkhuizen-design-tokens/dist/index.css",
             },
             {
+              className: 'exxellence-theme',
+              title: 'Exxellence',
+              href: 'https://unpkg.com/@conductionnl/exxellence-design-tokens/dist/index.css',
+            },
+            {
               className: "groningen-theme",
-              title: "0014",
+              title: "Groningen",
               href: "https://unpkg.com/@nl-design-system-unstable/groningen-design-tokens/dist/index.css",
             },
             {
               className: "haarlemmermeer-theme",
-              title: "0394",
+              title: "Haarlemmermeer",
               href: "https://unpkg.com/@nl-design-system-unstable/haarlemmermeer-design-tokens/dist/index.css",
             },
             {
               className: "hoorn-theme",
-              title: "0405",
+              title: "Hoorn",
               href: "https://unpkg.com/@nl-design-system-unstable/hoorn-design-tokens/dist/index.css",
             },
             {
               className: "horstaandemaas-theme",
-              title: "1507",
+              title: "Horstaandemaas",
               href: "https://unpkg.com/@nl-design-system-unstable/horstaandemaas-design-tokens/dist/index.css",
             },
             {
               className: "leidschendam-theme",
-              title: "1916",
+              title: "Leidschendam",
               href: "https://unpkg.com/@nl-design-system-unstable/leidschendam-design-tokens/dist/index.css",
             },
             {
@@ -118,27 +125,37 @@ const ThemeSwitcher = () => {
             },
             {
               className: "noordoostpolder-theme",
-              title: "0171",
+              title: "Noordoostpolder",
               href: "https://unpkg.com/@nl-design-system-unstable/noordoostpolder-design-tokens/dist/index.css",
             },
             {
+              className: 'procura-theme',
+              title: 'Procura',
+              href: 'https://unpkg.com/@conductionnl/procura-design-tokens/dist/index.css',
+            },
+            {
               className: "riddeliemers-theme",
-              title: "riddeliemers",
+              title: "Riddeliemers",
               href: "https://unpkg.com/@nl-design-system-unstable/riddeliemers-design-tokens/dist/index.css",
             },
             {
               className: "rotterdam-theme",
-              title: "0599",
+              title: "Rotterdam",
               href: "https://unpkg.com/@nl-design-system-unstable/rotterdam-design-tokens/dist/index.css",
             },
             {
+              className: 'simgroep-theme',
+              title: 'Simgroep',
+              href: 'https://unpkg.com/@conductionnl/simgroep-design-tokens/dist/index.css',
+            },
+            {
               className: "stedebroec-theme",
-              title: "0532",
+              title: "Stedebroec",
               href: "https://unpkg.com/@nl-design-system-unstable/stedebroec-design-tokens/dist/index.css",
             },
             {
               className: "tilburg-theme",
-              title: "0855",
+              title: "Tilburg",
               href: "https://unpkg.com/@nl-design-system-unstable/tilburg-design-tokens/dist/index.css",
             },
             {
@@ -148,33 +165,38 @@ const ThemeSwitcher = () => {
             },
             {
               className: "venray-theme",
-              title: "0984",
+              title: "Venray",
               href: "https://unpkg.com/@nl-design-system-unstable/venray-design-tokens/dist/index.css",
             },
             {
+              className: 'vrijbrp-theme',
+              title: 'Vrijbrp',
+              href: 'https://unpkg.com/@conductionnl/vrijbrp-design-tokens/dist/index.css',
+            },
+            {
               className: "vught-theme",
-              title: "0865",
+              title: "Vught",
               href: "https://unpkg.com/@nl-design-system-unstable/vught-design-tokens/dist/index.css",
             },
             {
               className: "westervoort-theme",
-              title: "0293",
+              title: "Westervoort",
               href: "https://unpkg.com/@nl-design-system-unstable/westervoort-design-tokens/dist/index.css",
             },
             {
               className: "zevenaar-theme",
-              title: "0299",
+              title: "Zevenaar",
               href: "https://unpkg.com/@nl-design-system-unstable/zevenaar-design-tokens/dist/index.css",
-            },
-            {
-              className: "zwolle-theme",
-              title: "0193",
-              href: "https://unpkg.com/@nl-design-system-unstable/zwolle-design-tokens/dist/index.css",
             },
             {
               className: "zoetermeer-theme",
               title: "Zoetermeer",
               href: "https://unpkg.com/@conductionnl/zoetermeer-design-tokens/dist/index.css",
+            },
+            {
+              className: "zwolle-theme",
+              title: "Zwolle",
+              href: "https://unpkg.com/@nl-design-system-unstable/zwolle-design-tokens/dist/index.css",
             },
           ])}
         />
