@@ -99,6 +99,11 @@ const ThemeSwitcher = () => {
               href: "https://unpkg.com/@nl-design-system-unstable/groningen-design-tokens/dist/index.css",
             },
             {
+              className: 'haarlem-theme',
+              title: 'Haarlem',
+              href: 'https://unpkg.com/@conductionnl/haarlem-design-tokens/dist/index.css',
+            },
+            {
               className: "haarlemmermeer-theme",
               title: "Haarlemmermeer",
               href: "https://unpkg.com/@nl-design-system-unstable/haarlemmermeer-design-tokens/dist/index.css",
