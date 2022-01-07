@@ -27,3 +27,33 @@
     width: fit-content !important;
 }
 
+.utrecht-sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: unset;
+    position: relative;
+}
+
+.utrecht-sidenav-btn {
+    padding: 15px;
+}
+
+.utrecht-sidenav__list {
+ display: none;
+}
+
+.utrecht-sidenav > input {
+    position: absolute;
+    opacity: 0;
+}
+
+.utrecht-sidenav > input:checked + label + .utrecht-sidenav__list{
+    display: block;
+}
+
+
+.utrecht-sidenav__link {
+    text-align: center;
+    display: block;
+}

@@ -2,6 +2,7 @@ import * as React from "react";
 import { useUrlContext } from "../../context/urlContext";
 import { getUser, isLoggedIn, logout } from "../../services/auth";
 import { navigate } from "gatsby-link";
+import ActionMenu from "./action-menu";
 
 export default function MainMenu() {
   const handleLogout = () => {

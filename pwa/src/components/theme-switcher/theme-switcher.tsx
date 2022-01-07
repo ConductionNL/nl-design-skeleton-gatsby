@@ -56,7 +56,7 @@ const ThemeSwitcher = () => {
             {
               className: "conduction-theme",
               title: "Conduction",
-              href: "https://unpkg.com/@conductionnl/conduction-design-tokens/dist/index.css",
+              href: "https://unpkg.com/@conductionnl/conduction-design-tokens@latest/dist/index.css",
             },
             {
               className: "demodam-theme",
@@ -122,6 +122,11 @@ const ThemeSwitcher = () => {
               className: "leidschendam-theme",
               title: "Leidschendam",
               href: "https://unpkg.com/@nl-design-system-unstable/leidschendam-design-tokens/dist/index.css",
+            },
+            {
+              className: 'maastricht-theme',
+              title: 'Maastricht ',
+              href: 'https://unpkg.com/@conductionnl/maastricht -design-tokens/dist/index.css',
             },
             {
               className: "nijmegen-theme",

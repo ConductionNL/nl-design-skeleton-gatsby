@@ -1,6 +1,7 @@
 import * as React from "react";
 import Footer from "./footer";
 import Header from "./header";
+import ActionMenu from "./action-menu";
 import "bootstrap/dist/css/bootstrap.css";
 import MainMenu from "./menu";
 import { Helmet } from "react-helmet";
@@ -20,6 +21,7 @@ export default function Layout({ children }) {
       <div className={`utrecht-document ${context.defaultTheme}-theme`}>
         <div className="utrecht-page">
           <Header />
+          <ActionMenu/>
           <MainMenu />
           <div className="utrecht-page-content">
             <div className="container py-4">{children}</div>
