@@ -61,7 +61,8 @@ const ThemeSwitcher = () => {
             {
               className: "demodam-theme",
               title: "Demodam",
-              href: "https://unpkg.com/@conductionnl/demodam-design-tokens/src/index.css",
+              href: 'https://unpkg.com/@conductionnl/demodam-design-tokens/dist/index.css',
+
             },
             {
               className: "denbosch-theme",
@@ -76,12 +77,12 @@ const ThemeSwitcher = () => {
             {
               className: "duiven-theme",
               title: "Duiven",
-              href: "https://unpkg.com/@nl-design-system-unstable/duiven-design-tokens/dist/index.css",
+              href: 'https://unpkg.com/@nl-design-system-unstable/duiven-design-tokens/dist/index.css',
             },
             {
               className: "duo-theme",
               title: "Duo",
-              href: "https://unpkg.com/@nl-design-system-unstable/duo-design-tokens/dist/index.css",
+              href: 'https://unpkg.com/@nl-design-system-unstable/duo-design-tokens/dist/index.css',
             },
             {
               className: "enkhuizen-theme",
@@ -126,7 +127,7 @@ const ThemeSwitcher = () => {
             {
               className: 'maastricht-theme',
               title: 'Maastricht ',
-              href: 'https://unpkg.com/@conductionnl/maastricht -design-tokens/dist/index.css',
+              href: 'https://unpkg.com/@conductionnl/maastricht-design-tokens/dist/index.css',
             },
             {
               className: "nijmegen-theme",
