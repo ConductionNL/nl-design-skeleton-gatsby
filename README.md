@@ -45,6 +45,6 @@ After saving, wait for GitHub to publish your project and provide you with a lin
 
 ## Technical Documentation
 
-Full technical documentation is provided on [read the docs](https://nl-design-skeleton-gastby.readthedocs.io/) and is based on [MKDocs](https://www.mkdocs.org/). A more product owner focused (and less technical) product page is hosted at [link to be added]().
+Full technical documentation is provided on [read the docs](https://skeleton-app.readthedocs.io/en/latest//) and is based on [MKDocs](https://www.mkdocs.org/). A more product owner focused (and less technical) product page is hosted at [link to be added]().
 
 If you want to run the technical documentation locally, you can do so by using MKDocs build server and the serve command. Just go to the local repository and execute the following command for the documenation to be available on port 8000 (make sure to [install MKDocs](https://www.mkdocs.org/user-guide/installation/) first)
