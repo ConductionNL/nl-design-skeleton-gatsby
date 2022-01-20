@@ -1,4 +1,6 @@
 site_name: Commonground Skeleton App
 repo_url: https://github.com/ConductionNL/nl-design-skeleton-gatsby
 edit_uri: docs/
+    index.md
+    DESIGN.md
 theme: readthedocs
