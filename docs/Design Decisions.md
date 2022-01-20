@@ -1,4 +1,4 @@
-Design Decisions
+# Design Decisions
 
 While building the NL Design Skeleton application, we must make decisions. The main decisions noted here are to provide a hook for future choices and give insights into the decision-making behind the projects. This, in turn, should help developers with their choices when they want to contribute code.
 
