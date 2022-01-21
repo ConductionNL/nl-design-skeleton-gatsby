@@ -3,9 +3,8 @@ repo_url: https://github.com/ConductionNL/nl-design-skeleton-gatsby
 edit_uri: docs/
     Home.md
     Contributing.md
+    Getting Started.md
     Design Decisions.md
     Features.md
-    Getting Started.md
-    Installation.md
     Security.md
 theme: readthedocs

@@ -1,7 +1,5 @@
-The commonground web gateway aims at providing an easy out of the box experience for developers, be it either in local development or production environments. It does that by providing a no nonsense api design to be the ajax engine under any modern progesive web app. But it could also be used the navigate the complexities of an microservice ecosystem form an application point of view or handle an omni-channel strategy.
+The NL Design Skeleton aims at providing an easy out-of-the-box experience for developers, be it either in local development or production environments. It can be statically built via Gatsby or combined with the [Commonground Gateway](https://github.com/ConductionNL/commonground-gateway "This is for API functionality"). Details are in the Getting Started.
 
-Anyways, you can read the full sales pitch on the product page.
+Anyways, you can read the full sales pitch on the [product page]("link to be added").
 
-This however is the technical documentation where we can read a bit more about
-
-Features Roadmap Security Installation Design Decisions Contributing
+This, however, is the technical documentation. You can find the topics on the left for your perusal.
