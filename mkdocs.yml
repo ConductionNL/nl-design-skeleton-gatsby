@@ -5,7 +5,7 @@ edit_uri: docs/
     Getting Started.md
     Installation.md
     Features.md
-    Design Decisions.md
+    Design.md
     Contributing.md
     Publiccode.md
     Roadmap.md
@@ -14,10 +14,11 @@ edit_uri: docs/
     Authors.md
     Security.md
 nav:
+    - index.md
     - Getting Started.md
     - Installation.md
     - Features.md
-    - Design Decisions.md
+    - Design.md
     - Contributing.md
     - PUBLICCODE.md
     - Roadmap.md

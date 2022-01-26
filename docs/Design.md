@@ -4,9 +4,9 @@ While building the NL Design Skeleton application, we must make decisions. The m
 
 ## Docker First
 
-The NL Design Skeleton application is the first and foremost designed to support rapid prototyping of Dutch governmental applications and the [Common Ground](https://commonground.nl/) ecosystem. As such, it adheres to the [Common Ground](https://commonground.nl/) design principles and underlying standards like [NL Design System](https://designsystem.gebruikercentraal.nl/). That means that the application is intended to be installed as a Kubernetes container on a [Haven](https://haven.commonground.nl/) cluster. Appropriate Helm installation files for this application are included, and the application is listed on [Artifact Hub](https://artifacthub.io).
+The NL Design Skeleton application is the first and foremost designed to support rapid prototyping of Dutch governmental applications and the [Commonground](https://commonground.nl/) ecosystem. As such, it adheres to the Commonground design principles and underlying standards like [NL Design System](https://designsystem.gebruikercentraal.nl/). That means that the application is intended to be installed as a Kubernetes container on a [Haven](https://haven.commonground.nl/) cluster. Appropriate Helm installation files for this application are included, and the application is listed on [Artifact Hub](https://artifacthub.io).
 
-The local development environment is based on containers run on [Docker](https://docker.com) desktop, and the [installation guide]('../README.md') is written as such. This doesn't mean that the application can't be run like a standard Node.js/Gatsby application. You can run the appropriate commands from the `/PWA` folder.
+The local development environment is based on containers run on [Docker](https://docker.com) desktop, and the [installation guide](./Installation.md) is written as such. This doesn't mean that the application can't be run like a standard Node.js/Gatsby application. You can run the appropriate commands from the `/PWA` folder.
 
 ## Static Build and Gateway usage
 

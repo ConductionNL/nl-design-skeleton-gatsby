@@ -50,7 +50,7 @@ To quickly identify problems and reduce risks during development, we use GitHub 
 
 ### Publish with an open license
 
-We publish all our software under the [European Union Public Licence](https://joinup.ec.europa.eu/collection/eupl/introduction-eupl-licence). This is a OSI-approved open source license. For more information, see [LICENSE]('./License.md').
+We publish all our software under the [European Union Public Licence](https://joinup.ec.europa.eu/collection/eupl/introduction-eupl-licence). This is a OSI-approved open source license. For more information, see [LICENSE](./License.md).
 
 ### Use a coherent style
 

@@ -17,7 +17,7 @@ Your personal code
 For the first two parts, there is very little to worry about. Symphony has an excellent safety reputation.
 However, you should definitely keep your dependencies, Symfony, doctrine, and others up to date by regularly running `composer update` in your containers (see the Tutorial).
 Online testing
-When you want your component to be tested online you can put in a request to the Conduction team to include your component on the [Demodam]() test environment. Then, the component will be subjected to penetration tests and the API test provision.
+When you want your component to be tested online you can put in a request to the Conduction team to include your component on the [Demodam](https://demodam.org/) test environment. Then, the component will be subjected to penetration tests and the API test provision.
 
 ## So what should you do?
 

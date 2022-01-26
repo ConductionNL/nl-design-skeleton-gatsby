@@ -10,7 +10,7 @@ To develop locally, clone your new repository to your local machine. Open the te
 
 **Nextjs**
 
-"`cli
+```cli
 $ yarn install
 $ yarn dev
 
@@ -18,7 +18,7 @@ $ yarn dev
 
 **Gatsby**
 
-"`cli
+```cli
 $ npm install
 $ npm run develop
 ```
