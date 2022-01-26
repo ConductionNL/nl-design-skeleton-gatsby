@@ -1,11 +1,11 @@
 # NL Design Skeleton Application
 
-The NL Design Skeleton application is designed for rapid application testing and prototype development on the NL Design System. It provides a basic skeleton application with full NL Design system functionality that any developer can easily extend view locally and deploy to an online environment for demonstration purposes. The main benefit of this is:
+The NL Design Skeleton application is designed for rapid application testing and prototype development on the NL Design System. It provides a basic skeleton application with full NL Design system functionality that any developer can easily extend, view locally and deploy to an online environment for demonstration purposes. The main benefits are:
 
-Development and (online) demonstration of prototypes without the need of a server.
-An out-of-the-box basic application that doesn't require configuration or setup and can be extended immediately.
+-   Development and (online) demonstration of prototypes without the need of a server.
+-   An out-of-the-box basic application that doesn't require configuration or setup and can be extended immediately.
 
-The application is available in two versions, a Next.js version, and a Gatsby version. We recommend the Gatsby version with deployment through Gatsby pages if you want to deploy your prototype without setting up a server.
+The application is available in two versions, a [Next.js](https://nextjs.org/) version, and a [Gatsby](https://www.gatsbyjs.com/) version. We recommend the Gatsby version with deployment through Gatsby pages if you want to deploy your prototype without setting up a server.
 
 ## Getting started
 
@@ -32,7 +32,7 @@ $ npm install
 $ npm run develop
 ```
 
-After Yarn has successfully set up your dev environment, navigate to [http://localhost:3000/](http://localhost:3000/) on Next.js or to [http://localhost:8000/](http://localhost:8000/) for Gatsby and see the same application as on
+After succesfully setting up your dev environment, navigate to [http://localhost:3000/](http://localhost:3000/) on Next.js or to [http://localhost:8000/](http://localhost:8000/) for Gatsby and see the same application as on
 [https://conductionnl.github.io/nl-design-skeleton-gatsby/](https://conductionnl.github.io/nl-design-skeleton-gatsby/). Feel free to open up your project code and make some changes. You should see the changes in your development environment instantaneously due to hot-reloading.
 
 ## Publishing your prototype to the internet (Gatsby only)
@@ -47,4 +47,4 @@ After saving, wait for GitHub to publish your project and provide you with a lin
 
 Full technical documentation is provided on [read the docs](https://skeleton-app.readthedocs.io/en/latest//) and is based on [MKDocs](https://www.mkdocs.org/). A more product owner focused (and less technical) product page is hosted at [link to be added]().
 
-If you want to run the technical documentation locally, you can do so by using MKDocs build server and the serve command. Just go to the local repository and execute the following command for the documenation to be available on port 8000 (make sure to [install MKDocs](https://www.mkdocs.org/user-guide/installation/) first)
+If you want to run the technical documentation locally, you can do so by using MKDocs build server and the serve command. Just go to the local repository and execute the following command for the documenation to be available on [port 8000](localhost://8000). Make sure to [install MKDocs](https://www.mkdocs.org/user-guide/installation/) first.

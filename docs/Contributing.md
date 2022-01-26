@@ -36,6 +36,10 @@ If you'd like to contribute, start by searching through the issues and pull requ
 
 If you don't see your idea listed and you think it fits into the goals of this guide, open a pull request.
 
+## Use a coherent style
+
+To adhere a coding and writing style we use the already existing [StyleCI](https://styleci.io/). We are using StyleCi for automated test on our coding style. For additions to the documentation, we kindly request using [Grammarly](https://app.grammarly.com/)
+
 ## Setting up your environment
 
 This site is powered by [Read the Docs](https://docs.readthedocs.io/). Running it on your local machine requires installing [MkDocs](https://www.mkdocs.org/getting-started//).
